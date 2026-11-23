@@ -1,0 +1,105 @@
+# 100-app agent-toolkit audit (Composio take-home)
+
+Fields per app: id, app, category, primary_auth, access, api_type, existing_mcp, buildability, main_blocker, evidence URLs.
+Full data: data.json / data.csv
+
+- 1. Salesforce [CRM and Sales] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 2. HubSpot [CRM and Sales] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 3. Pipedrive [CRM and Sales] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 4. Attio [CRM and Sales] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 5. Twenty [CRM and Sales] auth=API key access=self-serve-free mcp=official build=ready blocker=none
+- 6. Podio [CRM and Sales] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 7. Zoho CRM [CRM and Sales] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 8. Close [CRM and Sales] auth=API key access=self-serve-trial mcp=official build=ready blocker=none
+- 9. Copper [CRM and Sales] auth=API key access=self-serve-trial mcp=community build=ready blocker=none
+- 10. DealCloud [CRM and Sales] auth=OAuth2 access=paid-plan mcp=official build=blocked blocker=enterprise customer tenant required (sales)
+- 11. Zendesk [Support and Helpdesk] auth=OAuth2 access=self-serve-trial mcp=community build=ready-with-friction blocker=global OAuth client approval
+- 12. Intercom [Support and Helpdesk] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 13. Freshdesk [Support and Helpdesk] auth=API key access=self-serve-trial mcp=official build=ready blocker=none
+- 14. Front [Support and Helpdesk] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 15. Pylon [Support and Helpdesk] auth=Bearer token access=paid-plan mcp=official build=ready-with-friction blocker=sales-led trial/paid plan required
+- 16. LiveAgent [Support and Helpdesk] auth=API key access=self-serve-trial mcp=official build=ready blocker=none
+- 17. Plain [Support and Helpdesk] auth=API key access=self-serve-trial mcp=official build=ready blocker=none
+- 18. Help Scout [Support and Helpdesk] auth=OAuth2 access=self-serve-trial mcp=official build=ready blocker=none
+- 19. Gorgias [Support and Helpdesk] auth=API key access=self-serve-trial mcp=official build=ready blocker=none
+- 20. Gladly [Support and Helpdesk] auth=Basic access=paid-plan mcp=community build=blocked blocker=sales contact required for an account
+- 21. Slack [Communications and Messaging] auth=OAuth2 access=self-serve-free mcp=official build=ready-with-friction blocker=Marketplace approval needed for full rate limits on distributed apps
+- 22. Twilio [Communications and Messaging] auth=Basic access=self-serve-trial mcp=official build=ready blocker=none
+- 23. Zoho Cliq [Communications and Messaging] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 24. Lark (Larksuite) [Communications and Messaging] auth=OAuth2 access=self-serve-free mcp=official build=ready-with-friction blocker=store-app listing review / tenant admin approval for scopes
+- 25. Pumble [Communications and Messaging] auth=API key access=self-serve-free mcp=official build=ready blocker=none
+- 26. Discord [Communications and Messaging] auth=Bot token access=self-serve-free mcp=community build=ready blocker=none
+- 27. Telegram [Communications and Messaging] auth=Bot token access=self-serve-free mcp=community build=ready blocker=none
+- 28. WhatsApp Business [Communications and Messaging] auth=Bearer token access=self-serve-free mcp=official build=ready-with-friction blocker=Meta business verification / app review for production
+- 29. Aircall [Communications and Messaging] auth=Basic access=paid-plan mcp=community build=ready-with-friction blocker=partner program approval for OAuth
+- 30. Vonage [Communications and Messaging] auth=API key access=self-serve-trial mcp=official build=ready blocker=none
+- 31. Google Ads [Marketing, Ads, Email and Social] auth=OAuth2 access=self-serve-free mcp=official build=ready-with-friction blocker=access-level review for production scale
+- 32. Meta Ads [Marketing, Ads, Email and Social] auth=OAuth2 access=admin-approval mcp=official build=ready-with-friction blocker=app review for Advanced Access
+- 33. LinkedIn Ads [Marketing, Ads, Email and Social] auth=OAuth2 access=admin-approval mcp=community build=ready-with-friction blocker=Advertising API application approval
+- 34. GoHighLevel [Marketing, Ads, Email and Social] auth=OAuth2 access=paid-plan mcp=official build=ready-with-friction blocker=paid plan required
+- 35. Mailchimp [Marketing, Ads, Email and Social] auth=API key access=self-serve-free mcp=community build=ready blocker=none
+- 36. Klaviyo [Marketing, Ads, Email and Social] auth=API key access=self-serve-free mcp=official build=ready blocker=none
+- 37. systeme.io [Marketing, Ads, Email and Social] auth=API key access=self-serve-free mcp=official build=ready blocker=none
+- 38. Pinterest [Marketing, Ads, Email and Social] auth=OAuth2 access=admin-approval mcp=community build=ready-with-friction blocker=app review for Trial and Standard access
+- 39. Threads (Meta) [Marketing, Ads, Email and Social] auth=OAuth2 access=self-serve-free mcp=community build=ready-with-friction blocker=app review for scopes
+- 40. SendGrid [Marketing, Ads, Email and Social] auth=API key access=self-serve-trial mcp=community build=ready blocker=none
+- 41. Shopify [Ecommerce] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 42. WooCommerce [Ecommerce] auth=Basic access=self-serve-free mcp=official build=ready blocker=none
+- 43. BigCommerce [Ecommerce] auth=OAuth2 access=self-serve-trial mcp=official build=ready blocker=none
+- 44. Salesforce Commerce Cloud [Ecommerce] auth=OAuth2 access=partner-gated mcp=official build=blocked blocker=customer/partner-only sandbox access
+- 45. Magento (Adobe Commerce) [Ecommerce] auth=Bearer token access=self-serve-free mcp=community build=ready-with-friction blocker=per-store self-hosted base URL; store admin must create integration/token
+- 46. Squarespace [Ecommerce] auth=API key access=paid-plan mcp=community build=ready-with-friction blocker=paid plan required; OAuth client approval
+- 47. Ecwid [Ecommerce] auth=OAuth2 access=paid-plan mcp=community build=ready-with-friction blocker=paid plan required
+- 48. Gumroad [Ecommerce] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 49. Amazon Selling Partner [Ecommerce] auth=OAuth2 access=partner-gated mcp=official build=ready-with-friction blocker=developer registration and role approval; Professional seller account
+- 50. fanbasis [Ecommerce] auth=other access=no-public-api mcp=none-found build=blocked blocker=no public API
+- 51. DataForSEO [Data, SEO and Scraping] auth=Basic access=self-serve-trial mcp=official build=ready blocker=none
+- 52. SE Ranking [Data, SEO and Scraping] auth=API key access=self-serve-trial mcp=official build=ready blocker=none
+- 53. Ahrefs [Data, SEO and Scraping] auth=Bearer token access=paid-plan mcp=official build=ready-with-friction blocker=paid plan required
+- 54. MrScraper [Data, SEO and Scraping] auth=API key access=self-serve-free mcp=official build=ready blocker=none
+- 55. Apify [Data, SEO and Scraping] auth=Bearer token access=self-serve-free mcp=official build=ready blocker=none
+- 56. Firecrawl [Data, SEO and Scraping] auth=Bearer token access=self-serve-free mcp=official build=ready blocker=none
+- 57. Bright Data [Data, SEO and Scraping] auth=Bearer token access=self-serve-free mcp=official build=ready blocker=none
+- 58. Sherlock [Data, SEO and Scraping] auth=none access=self-serve-free mcp=community build=ready-with-friction blocker=no hosted API; must wrap CLI in own runtime
+- 59. Waterfall.io [Data, SEO and Scraping] auth=API key access=paid-plan mcp=none-found build=ready-with-friction blocker=paid credits required; no free trial confirmed
+- 60. Clay [Data, SEO and Scraping] auth=API key access=self-serve-free mcp=official build=ready blocker=none
+- 61. GitHub [Developer, Infra and Data platforms] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 62. Vercel [Developer, Infra and Data platforms] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 63. Netlify [Developer, Infra and Data platforms] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 64. Cloudflare [Developer, Infra and Data platforms] auth=Bearer token access=self-serve-free mcp=official build=ready blocker=none
+- 65. Supabase [Developer, Infra and Data platforms] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 66. Neo4j [Developer, Infra and Data platforms] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 67. Snowflake [Developer, Infra and Data platforms] auth=OAuth2 access=self-serve-trial mcp=official build=ready-with-friction blocker=trial-only free access; per-account URL
+- 68. MongoDB Atlas [Developer, Infra and Data platforms] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 69. Datadog [Developer, Infra and Data platforms] auth=API key access=self-serve-trial mcp=official build=ready-with-friction blocker=trial expires; paid plan afterwards
+- 70. Sentry [Developer, Infra and Data platforms] auth=Bearer token access=self-serve-free mcp=official build=ready blocker=none
+- 71. Notion [Productivity and Project Management] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 72. Airtable [Productivity and Project Management] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 73. Linear [Productivity and Project Management] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 74. Jira [Productivity and Project Management] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 75. Asana [Productivity and Project Management] auth=OAuth2 access=self-serve-trial mcp=official build=ready blocker=none
+- 76. Monday.com [Productivity and Project Management] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 77. ClickUp [Productivity and Project Management] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
+- 78. Coda [Productivity and Project Management] auth=Bearer token access=self-serve-free mcp=official build=ready blocker=none
+- 79. Smartsheet [Productivity and Project Management] auth=OAuth2 access=paid-plan mcp=official build=ready-with-friction blocker=paid plan required
+- 80. Harvest [Productivity and Project Management] auth=OAuth2 access=self-serve-trial mcp=official build=ready blocker=none
+- 81. Stripe [Finance and Fintech] auth=API key access=self-serve-free mcp=official build=ready blocker=none
+- 82. Plaid [Finance and Fintech] auth=API key access=self-serve-free mcp=official build=ready blocker=none
+- 83. Binance [Finance and Fintech] auth=Signature/HMAC access=self-serve-free mcp=official build=ready-with-friction blocker=KYC'd (Verified Plus) funded account; regional restrictions
+- 84. Paygent Connect [Finance and Fintech] auth=other access=no-public-api mcp=none-found build=blocked blocker=no public API / product not identifiable
+- 85. iPayX [Finance and Fintech] auth=none access=self-serve-free mcp=official build=ready-with-friction blocker=no documented public REST API; only small MCP surface
+- 86. QuickBooks [Finance and Fintech] auth=OAuth2 access=self-serve-free mcp=official build=ready-with-friction blocker=metered CorePlus read calls; production key review (unverified)
+- 87. Xero [Finance and Fintech] auth=OAuth2 access=self-serve-free mcp=official build=ready-with-friction blocker=app certification and paid tier beyond 5 connections
+- 88. Brex [Finance and Fintech] auth=Bearer token access=admin-approval mcp=official build=ready-with-friction blocker=Brex customer account required; no sandbox; partner OAuth via support
+- 89. Ramp [Finance and Fintech] auth=OAuth2 access=admin-approval mcp=official build=ready-with-friction blocker=Ramp customer admin account required; sandbox by request
+- 90. PitchBook [Finance and Fintech] auth=API key access=partner-gated mcp=official build=blocked blocker=sales contract for API key
+- 91. NotebookLM [AI, Research and Media-native] auth=OAuth2 access=paid-plan mcp=none-found build=ready-with-friction blocker=paid Enterprise licence required; Preview (v1alpha) API
+- 92. Otter AI [AI, Research and Media-native] auth=OAuth2 access=self-serve-free mcp=official build=ready-with-friction blocker=plan eligibility unconfirmed (REST possibly Enterprise-only); narrow API
+- 93. Fathom [AI, Research and Media-native] auth=API key access=self-serve-free mcp=official build=ready blocker=none
+- 94. Consensus [AI, Research and Media-native] auth=API key access=paid-plan mcp=official build=ready-with-friction blocker=paid plan required for REST API key
+- 95. Reducto [AI, Research and Media-native] auth=API key access=self-serve-free mcp=official build=ready blocker=none
+- 96. Devin [AI, Research and Media-native] auth=Bearer token access=paid-plan mcp=official build=ready-with-friction blocker=paid plan required
+- 97. higgsfield [AI, Research and Media-native] auth=API key access=paid-plan mcp=official build=ready-with-friction blocker=prepaid balance / paid plan required
+- 98. Mermaid CLI [AI, Research and Media-native] auth=none access=self-serve-free mcp=community build=ready-with-friction blocker=No hosted API: CLI must be wrapped in a sandboxed runtime (Node + headless Chromium)
+- 99. YouTube Transcript [AI, Research and Media-native] auth=API key access=self-serve-free mcp=official build=ready blocker=none
+- 100. Grain [AI, Research and Media-native] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
