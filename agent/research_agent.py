@@ -10,13 +10,13 @@ Pipeline (same loop that produced the published dataset):
   3. RE-CHECK  - every flagged or low-confidence record goes to a second,
                  adversarial agent that must re-open the cited URLs and either
                  confirm or correct each field.
-  4. HUMAN     - a random sample is checked by hand against the docs; results
-                 go into verification/human_check.csv.
+  4. HUMAN     - a random sample across passes is checked by hand against the
+                 docs; results go into verification/human_check.json.
 
 Usage:
   export ANTHROPIC_API_KEY=...
   python3 agent/research_agent.py --apps research/apps.tsv --ids 1-10 --out research/pass1/custom.json
-  python3 agent/research_agent.py --recheck research/pass1 --flags verification/loop1_flags.json --out research/pass2
+  python3 agent/research_agent.py --recheck research/pass1 --flags verification/loop1_flags_raw.json --out research/pass2
 
 Requires: pip install anthropic
 """
@@ -28,9 +28,9 @@ try:
 except ImportError:
     sys.exit("pip install anthropic")
 
-MODEL = os.environ.get("RESEARCH_MODEL", "claude-sonnet-5-5")
+MODEL = os.environ.get("RESEARCH_MODEL", "claude-sonnet-4-5-20250929")
 HERE = os.path.dirname(os.path.abspath(__file__))
-SPEC = open(os.path.join(HERE, "RESEARCH_SPEC.md")).read()
+SPEC = open(os.path.join(HERE, "RESEARCH_SPEC.md"), encoding="utf-8").read()
 TOOLS = [
     {"type": "web_search_20250305", "name": "web_search", "max_uses": 8},
     {"type": "web_fetch_20250910", "name": "web_fetch", "max_uses": 8},
@@ -100,22 +100,24 @@ def main():
 
     if a.recheck:
         rows = {}
-        for f in os.listdir(a.recheck):
-            for r in json.load(open(os.path.join(a.recheck, f))):
+        for f in sorted(os.listdir(a.recheck)):
+            if not f.endswith(".json"):
+                continue
+            for r in json.load(open(os.path.join(a.recheck, f), encoding="utf-8")):
                 rows[r["id"]] = r
-        flagged = {x["id"]: x["flags"] for x in json.load(open(a.flags))["flagged"]}
+        flagged = {x["id"]: x["flags"] for x in json.load(open(a.flags, encoding="utf-8"))["flagged"]}
         with ThreadPoolExecutor(a.workers) as ex:
             fixed = list(ex.map(lambda i: recheck(rows[i], flagged[i]), flagged))
         os.makedirs(a.out, exist_ok=True)
-        json.dump([r for r in fixed if r], open(os.path.join(a.out, "rechecked.json"), "w"), indent=1)
+        json.dump([r for r in fixed if r], open(os.path.join(a.out, "rechecked.json"), "w", encoding="utf-8"), indent=1)
         return
 
     want = parse_ids(a.ids)
-    rows = [r for r in csv.DictReader(open(a.apps), delimiter="\t") if int(r["id"]) in want]
+    rows = [r for r in csv.DictReader(open(a.apps, encoding="utf-8"), delimiter="\t") if int(r["id"]) in want]
     with ThreadPoolExecutor(a.workers) as ex:
         recs = list(ex.map(research, rows))
     os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
-    json.dump([r for r in recs if r], open(a.out, "w"), indent=1)
+    json.dump([r for r in recs if r], open(a.out, "w", encoding="utf-8"), indent=1)
     print(f"wrote {sum(1 for r in recs if r)}/{len(rows)} records -> {a.out}")
 
 

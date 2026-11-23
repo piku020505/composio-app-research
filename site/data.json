@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-11-23 11:45 UTC",
+  "generated": "2026-11-23 14:03 UTC",
   "n": 100
  },
  "apps": [
@@ -314,7 +314,7 @@
    ],
    "primary_auth": "OAuth2",
    "auth_notes": "User generates API key in Profile after admin grants 'API' capability; key + client id exchanged at /api/rest/v1/oauth/token via client_credentials grant with scopes (data, user_management, publish, ri_import, backup).",
-   "access": "paid-plan",
+   "access": "partner-gated",
    "access_notes": "Only DealCloud (Intapp) customer tenants exist; admin must grant API permission. No free/trial signup found - enterprise sales-led product.",
    "api_type": [
     "REST"
@@ -335,6 +335,8 @@
    },
    "round2_change": "Fully researched (was unknown): OAuth2 client-credentials with API key, official OAuth MCP, but blocked by need for an enterprise tenant.",
    "round": 2,
+   "human_checked": true,
+   "human_fix": true,
    "audited": false
   },
   {
@@ -422,7 +424,7 @@
    "api_breadth": "broad",
    "api_notes": "v2 REST: tickets, conversations, contacts, companies, agents, groups, roles, solutions, custom objects, SLA, automations, time entries, etc. Rate limits vary by plan.",
    "existing_mcp": "official",
-   "mcp_url": "https://<subdomain>.freshdesk.com/mcp",
+   "mcp_url": "https://partnersupport.freshworks.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk",
    "buildability": "ready",
    "main_blocker": "none",
    "human_needed": "none",
@@ -519,7 +521,7 @@
    "api_breadth": "broad",
    "api_notes": "API v3 (OpenAPI) per official generated Python SDK: 35+ API groups (agents, calls, contacts, companies, tickets, tags, departments, devices, grid, SLAs, subscriptions...) with roughly 200+ endpoints; legacy v1 has 12 groups/45 endpoints.",
    "existing_mcp": "official",
-   "mcp_url": "https://<your-liveagent-domain>/api/mcp",
+   "mcp_url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
    "buildability": "ready",
    "main_blocker": "none",
    "human_needed": "none",
@@ -532,6 +534,7 @@
    },
    "round2_change": "api_breadth set to broad from the official v3 OpenAPI-generated SDK (35+ groups, ~200+ endpoints); other fields unchanged.",
    "round": 2,
+   "human_checked": true,
    "audited": false
   },
   {
@@ -648,7 +651,7 @@
    ],
    "primary_auth": "Basic",
    "auth_notes": "Token-based Basic auth: agent email as username, API token (Settings > App Developer Tools > API token, requires 'API User' role) as password. Per-org base URL https://{org}.gladly.com; sandbox at {org}.gladly.qa.",
-   "access": "paid-plan",
+   "access": "partner-gated",
    "access_notes": "No free trial or self-serve signup; Gladly offers only 'Book a Demo'/contact sales. Credentials exist only inside a customer org.",
    "api_type": [
     "REST"
@@ -669,6 +672,8 @@
    },
    "round2_change": "Fully researched (was unknown): documented Basic-auth REST API but sales-only access makes it blocked; MCP only via third-party (StackOne).",
    "round": 2,
+   "human_checked": true,
+   "human_fix": true,
    "audited": false
   },
   {
@@ -937,6 +942,7 @@
    },
    "round2_change": "Access now backed by official get-started page (free test number); MCP URL switched to Meta's official doc page (dev/test only).",
    "round": 2,
+   "human_checked": true,
    "audited": false
   },
   {
@@ -1338,6 +1344,7 @@
    "round2_change": "Fully researched from scratch: API key/Bearer auth, 60-day trial access, community MCP; was entirely unknown.",
    "notes": "",
    "round": 2,
+   "human_checked": true,
    "audited": false
   },
   {
@@ -1481,7 +1488,6 @@
    "what_it_does": "Open-source or Adobe-licensed ecommerce platform with REST/GraphQL/SOAP web APIs.",
    "auth_methods": [
     "Bearer token",
-    "OAuth2",
     "other"
    ],
    "primary_auth": "Bearer token",
@@ -1510,6 +1516,8 @@
    "notes": "Adobe's own MCP servers (App Builder MCP, Dropins MCP) are developer tooling, not store-data connectors, so store-data MCP is community (Marketplace/Packagist modules such as angeo/module-mcp-server, scandiweb write-up). OAuth 1.0a integrations mapped to OAuth2+other since OAuth1 is not an allowed value.",
    "round2_change": "Confirmed Magento Open Source is free to self-host (access now self-serve-free) and downgraded MCP from official to community since Adobe's MCPs are dev tooling only.",
    "round": 2,
+   "human_checked": true,
+   "human_fix": true,
    "audited": false
   },
   {
@@ -1613,6 +1621,7 @@
    "notes": "Endpoint list comes from the Mintlify-hosted docs of Gumroad's open-source repo (antiwork/gumroad). Community MCPs also exist (rmarescu/gumroad-mcp).",
    "round2_change": "Fully researched: OAuth2/personal token, free self-serve, moderate REST API, official OAuth MCP; was entirely unknown.",
    "round": 2,
+   "human_checked": true,
    "audited": false
   },
   {
@@ -1647,6 +1656,7 @@
    "notes": "Official MCP is from amzn/selling-partner-agentic-toolkit (Seller Central OAuth). Fee status from developer.amazonservices.com/spp-announcement (delayed) and novadata.io (cancelled), the latter a third-party report.",
    "round2_change": "Fully researched: LWA OAuth2, Professional account + developer/role approval gate, official Amazon MCP, fee cancellation noted; was entirely unknown.",
    "round": 2,
+   "human_checked": true,
    "audited": false
   },
   {
@@ -1655,32 +1665,34 @@
    "category": "Ecommerce",
    "what_it_does": "Checkout, payments and financing platform for high-ticket digital businesses.",
    "auth_methods": [
-    "other"
+    "API key"
    ],
-   "primary_auth": "other",
-   "auth_notes": "No public API auth docs found. Third-party builder (Emergent) mentions 'API credentials' and a FanBasis Checkout SDK without detail; Zapier app uses account connection.",
-   "access": "no-public-api",
-   "access_notes": "fanbasis.com mentions '7000+ App Integrations' (via Zapier) but no API, developer docs or API keys; access path otherwise is demo call or account signup.",
+   "primary_auth": "API key",
+   "auth_notes": "Server-to-server requests authenticate via x-api-key header from the FanBasis seller portal (Account > API Keys); frontend checkout widgets use short-lived Checkout Session Secrets.",
+   "access": "admin-approval",
+   "access_notes": "Developer docs portal (dev-docs.fanbasis.com) and API keys require a FanBasis seller/merchant account; official @fanbasis/checkout-sdk supports sandbox and production environments.",
    "api_type": [
-    "none"
+    "REST"
    ],
-   "api_breadth": "none",
-   "api_notes": "Only Zapier triggers/actions (new sale, failed payment, manual transactions, cancellations, disputes, member joins) found; no documented REST API.",
+   "api_breadth": "narrow",
+   "api_notes": "Public REST API (fanbasis.com/public-api) and official TypeScript SDK (@fanbasis/checkout-sdk) focused on checkout sessions, products, and webhooks.",
    "existing_mcp": "none-found",
    "mcp_url": null,
-   "buildability": "blocked",
-   "main_blocker": "no public API",
-   "human_needed": "ask FanBasis whether private API credentials/docs exist",
-   "confidence": "low",
+   "buildability": "ready-with-friction",
+   "main_blocker": "seller/developer portal account required for API key and docs",
+   "human_needed": "create approved FanBasis seller account to access dev-docs and generate API key",
+   "confidence": "medium",
    "evidence": {
-    "auth": "https://emergent.sh/integrations/fanbasis",
-    "access": "https://fanbasis.com",
-    "api": "https://zapier.com/apps/fanbasis/integrations/webhook/255726677/handle-failed-payments-in-fanbasis-by-triggering-gets-in-webhooks-by-zapier",
+    "auth": "https://www.npmjs.com/package/@fanbasis/checkout-sdk",
+    "access": "https://dev-docs.fanbasis.com",
+    "api": "https://www.npmjs.com/package/@fanbasis/checkout-sdk",
     "mcp": null
    },
    "notes": "Low confidence: an undocumented or partner-only API may exist (Emergent references API credentials); nothing public was found. Primary_auth 'other' used because no auth is documented.",
    "round2_change": "Identified the product (high-ticket checkout platform) and found no public API, only Zapier; verdict now blocked.",
    "round": 2,
+   "human_checked": true,
+   "human_fix": true,
    "audited": false
   },
   {
@@ -2742,7 +2754,7 @@
     "auth": "https://www.plaid.com/docs/api",
     "access": "https://support.plaid.com/hc/en-us/articles/16110110883479-How-are-Sandbox-Production-Trial-plan-and-Limited-Production-different",
     "api": "https://www.plaid.com/docs/api",
-    "mcp": "https://plaid.com/en-eu/blog/plaid-mcp-ai-assistant-claude/ (Dashboard MCP); also local Sandbox MCP mcp-server-plaid per https://www.developersdigest.tech/mcp-servers/plaid-sandbox"
+    "mcp": "https://plaid.com/en-eu/blog/plaid-mcp-ai-assistant-claude/"
    },
    "audited_fix": true,
    "round": 1,
@@ -2822,14 +2834,14 @@
    "category": "Finance and Fintech",
    "what_it_does": "Forensic FX audit detecting hidden bank markups on cross-border payments.",
    "auth_methods": [
-    "none",
+    "API key",
     "Bearer token",
-    "API key"
+    "none"
    ],
-   "primary_auth": "none",
-   "auth_notes": "Free MCP tools (check_fx_rate, audit_transaction 3/month per IP, compare_fx_sources) need no auth; full_forensic_report needs a Bearer token/API key. Another listing says an optional IPAYX_API_KEY (free from ipayx.ai) enables live provider quotes. How to obtain keys not documented.",
+   "primary_auth": "API key",
+   "auth_notes": "Free-tier MCP tools enforce 10 audits/day per API key; paid full_forensic_fx_report requires a Bearer token.",
    "access": "self-serve-free",
-   "access_notes": "Core tools are unauthenticated and free; paid per-report tool price not listed. Publisher iPAYX-Technologies (11850091 Canada Inc.). Dashboard at app.ipayx.ai; no first-party API docs verified.",
+   "access_notes": "Free self-serve tier (10 FX audits/day + mid-market rate lookups) via official MCP server; paid tier unlocks full forensic spread reports.",
    "api_type": [
     "none"
    ],
@@ -2840,16 +2852,18 @@
    "buildability": "ready-with-friction",
    "main_blocker": "no documented public REST API; only small MCP surface",
    "human_needed": "obtain API key for paid report tool",
-   "confidence": "low",
+   "confidence": "medium",
    "evidence": {
-    "auth": "https://glama.ai/mcp/servers/j0a5aea03v",
-    "access": "https://glama.ai/mcp/servers/j0a5aea03v",
-    "api": "https://mcp.so/servers/mcp-fx-audit-ipayx-stellar",
-    "mcp": "https://glama.ai/mcp/servers/j0a5aea03v"
+    "auth": "https://ipayx.ai/docs",
+    "access": "https://ipayx.ai/docs",
+    "api": "https://ipayx.ai/docs",
+    "mcp": "https://ipayx.ai/docs"
    },
    "notes": "Hosted endpoint is https://wild-bird-a412.ybolduc.workers.dev/mcp. Tool names differ between listings (two variants), suggesting evolving/duplicated servers. All evidence from MCP directories; ipayx.ai not fetched.",
    "round2_change": "Confirmed publisher repo (iPAYX-Technologies/mcp-fx-audit) and second stdio variant; verdict unchanged.",
    "round": 2,
+   "human_checked": true,
+   "human_fix": true,
    "audited": false
   },
   {
@@ -3019,6 +3033,7 @@
    "notes": "Morningstar (PitchBook parent) investor Q&A confirms premium PitchBook MCP connectors in Claude/ChatGPT for paying subscribers, plus a direct MCP being piloted; no public MCP URL found, so mcp_url is null. api_breadth 'broad' inferred from 'variety of relational endpoints'.",
    "round2_change": "Verified sales-contract access from PitchBook help page and found official (subscriber-only) MCP connectors.",
    "round": 2,
+   "human_checked": true,
    "audited": false
   },
   {
@@ -3199,7 +3214,7 @@
    "primary_auth": "Bearer token",
    "auth_notes": "v3 API uses service-user API keys or personal access tokens (cog_ prefix) as Authorization: Bearer. Service keys default to 30-day expiry. Legacy apk_/apk_user_ keys only work on v1/v2. MCP also needs X-Org-Id header for enterprise/PAT keys. OAuth not mentioned.",
    "access": "paid-plan",
-   "access_notes": "API docs describe Teams/standard-org and Enterprise quickstarts; Enterprise API (/v3/enterprise) is enterprise-only. No free tier found; exact plan eligibility not stated in the docs.",
+   "access_notes": "Devin offers a $0 Free plan (light quota) plus Pro ($20/mo), Max ($200/mo), Teams ($80/mo base) and Enterprise. PATs (cog_ Bearer tokens) are created under Settings > Devin API, while service-user API keys and production agent quotas require paid/org tiers.",
    "api_type": [
     "REST"
    ],
@@ -3217,6 +3232,7 @@
     "api": "https://docs.devin.ai/api-reference/overview.md",
     "mcp": "https://docs.devin.ai/work-with-devin/devin-mcp"
    },
+   "human_checked": true,
    "round": 1,
    "audited": true
   },

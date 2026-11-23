@@ -30,8 +30,11 @@ SECONDARY = ("medium.com", "reddit.com", "stackoverflow.com", "g2.com", "capterr
 
 def load(folder):
     rows = []
+    if os.path.isfile(folder):
+        data = json.load(open(folder, encoding="utf-8"))
+        return data["apps"] if isinstance(data, dict) and "apps" in data else data
     for f in sorted(glob.glob(os.path.join(folder, "*.json"))):
-        rows.extend(json.load(open(f)))
+        rows.extend(json.load(open(f, encoding="utf-8")))
     return rows
 
 
@@ -71,8 +74,13 @@ def check(r):
         u = ev.get(k)
         if not u or not str(u).startswith("http"):
             flags.append(f"no_evidence:{k}")
+        elif any(ch in str(u) for ch in ("<", ">", " ")):
+            flags.append(f"malformed_url:{k}")
         elif any(s in urlparse(u).netloc for s in SECONDARY):
             flags.append(f"secondary_source:{k}")
+    for k, u in (("evidence_mcp", ev.get("mcp")), ("mcp_url", r.get("mcp_url"))):
+        if u and any(ch in str(u) for ch in ("<", ">", " ")):
+            flags.append(f"malformed_url:{k}")
     if r.get("confidence") == "low":
         flags.append("low_confidence")
     return flags

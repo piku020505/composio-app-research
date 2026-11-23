@@ -1,56 +1,57 @@
 {
- "generated": "2026-11-23 11:44 UTC",
+ "generated": "2026-11-23 14:03 UTC",
  "n": 100,
  "access": {
   "self-serve-free": 58,
   "self-serve-trial": 18,
-  "paid-plan": 14,
-  "admin-approval": 5,
-  "partner-gated": 3,
-  "no-public-api": 2
+  "partner-gated": 5,
+  "paid-plan": 12,
+  "admin-approval": 6,
+  "no-public-api": 1
  },
  "build": {
   "ready": 60,
-  "blocked": 6,
-  "ready-with-friction": 34
+  "blocked": 5,
+  "ready-with-friction": 35
  },
  "auth": {
   "OAuth2": 48,
-  "API key": 27,
+  "API key": 29,
   "Bearer token": 12,
   "Basic": 5,
   "Bot token": 2,
-  "other": 2,
-  "none": 3,
-  "Signature/HMAC": 1
+  "none": 2,
+  "Signature/HMAC": 1,
+  "other": 1
  },
  "mcp": {
   "official": 80,
   "community": 16,
   "none-found": 4
  },
- "oauth_any": 75,
- "key_any": 80,
+ "oauth_any": 74,
+ "key_any": 81,
  "blockers": {
   "Partner / sales / customer-only gate": 9,
-  "App review / approval": 10,
+  "App review / approval": 11,
   "Paid plan required": 13,
   "No hosted API (CLI / self-host)": 3,
-  "No public API": 2,
   "Trial expires": 1,
   "Identity / KYC": 1,
-  "Other": 1
+  "No public API": 1,
+  "Narrow / MCP-only surface": 1
  },
  "matrix": {
   "CRM and Sales": {
    "self-serve-free": 7,
    "self-serve-trial": 2,
-   "paid-plan": 1
+   "partner-gated": 1
   },
   "Support and Helpdesk": {
    "self-serve-trial": 6,
    "self-serve-free": 2,
-   "paid-plan": 2
+   "paid-plan": 1,
+   "partner-gated": 1
   },
   "Communications and Messaging": {
    "self-serve-free": 7,
@@ -68,7 +69,7 @@
    "self-serve-trial": 1,
    "partner-gated": 2,
    "paid-plan": 2,
-   "no-public-api": 1
+   "admin-approval": 1
   },
   "Data, SEO and Scraping": {
    "self-serve-trial": 2,
@@ -115,8 +116,8 @@
   },
   "Ecommerce": {
    "ready": 4,
-   "blocked": 2,
-   "ready-with-friction": 4
+   "blocked": 1,
+   "ready-with-friction": 5
   },
   "Data, SEO and Scraping": {
    "ready": 7,
@@ -202,14 +203,195 @@
  ],
  "conf": {
   "high": 35,
-  "medium": 61,
-  "low": 4
+  "medium": 63,
+  "low": 2
  },
  "conf1": {
   "high": 28,
   "medium": 46,
   "low": 26
  },
- "human": [],
+ "human": [
+  {
+   "id": 10,
+   "app": "DealCloud",
+   "field": "access",
+   "agent": "paid-plan",
+   "human": "partner-gated",
+   "match": false,
+   "url": "https://api.docs.dealcloud.com/",
+   "note": "No self-serve paid checkout; requires an enterprise customer tenant provisioned via Intapp sales.",
+   "patch": {
+    "access": "partner-gated"
+   }
+  },
+  {
+   "id": 16,
+   "app": "LiveAgent",
+   "field": "access",
+   "agent": "self-serve-trial",
+   "human": "self-serve-trial",
+   "match": true,
+   "url": "https://www.liveagent.com/pricing",
+   "note": "30-day free trial with no credit card; API keys generated in Configuration > System > API. Fixed placeholder mcp_url to official docs link.",
+   "patch": {
+    "mcp_url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents"
+   }
+  },
+  {
+   "id": 20,
+   "app": "Gladly",
+   "field": "access",
+   "agent": "paid-plan",
+   "human": "partner-gated",
+   "match": false,
+   "url": "https://www.gladly.ai/get-started-gladly",
+   "note": "No self-serve signup or sandbox; both production and sandbox orgs must be provisioned through sales/CSM.",
+   "patch": {
+    "access": "partner-gated"
+   }
+  },
+  {
+   "id": 28,
+   "app": "WhatsApp Business",
+   "field": "buildability",
+   "agent": "ready-with-friction",
+   "human": "ready-with-friction",
+   "match": true,
+   "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started/",
+   "note": "Free test number is self-serve, but production requires Meta Business Verification and payment method."
+  },
+  {
+   "id": 40,
+   "app": "SendGrid",
+   "field": "access",
+   "agent": "self-serve-trial",
+   "human": "self-serve-trial",
+   "match": true,
+   "url": "https://signup.sendgrid.com/",
+   "note": "Permanent free tier was retired; self-serve signup gives a 60-day free trial (100 emails/day, no card)."
+  },
+  {
+   "id": 45,
+   "app": "Magento (Adobe Commerce)",
+   "field": "auth_methods",
+   "agent": "Bearer token, OAuth2, other",
+   "human": "Bearer token, other",
+   "match": false,
+   "url": "https://developer.adobe.com/commerce/webapi/get-started/authentication",
+   "note": "Integrations use OAuth 1.0a (not OAuth2). Removed OAuth2 so aggregate OAuth2 counts are not inflated.",
+   "patch": {
+    "auth_methods": [
+     "Bearer token",
+     "other"
+    ]
+   }
+  },
+  {
+   "id": 48,
+   "app": "Gumroad",
+   "field": "existing_mcp",
+   "agent": "official",
+   "human": "official",
+   "match": true,
+   "url": "https://gumroad.com/mcp",
+   "note": "Official Gumroad MCP server confirmed; REST v2 also supports self-serve OAuth2 and access tokens."
+  },
+  {
+   "id": 49,
+   "app": "Amazon Selling Partner",
+   "field": "access",
+   "agent": "partner-gated",
+   "human": "partner-gated",
+   "match": true,
+   "url": "https://developer.amazonservices.com/private-developer",
+   "note": "Requires Professional Seller account, Solution Provider Portal registration, and security-control review."
+  },
+  {
+   "id": 50,
+   "app": "fanbasis",
+   "field": "buildability",
+   "agent": "blocked (no-public-api)",
+   "human": "ready-with-friction (API key, REST)",
+   "match": false,
+   "url": "https://dev-docs.fanbasis.com",
+   "note": "Pass-2 missed FanBasis's developer portal (dev-docs.fanbasis.com), public REST API (x-api-key), and official @fanbasis/checkout-sdk on npm. Still friction because seller/developer portal credentials are required.",
+   "patch": {
+    "auth_methods": [
+     "API key"
+    ],
+    "primary_auth": "API key",
+    "auth_notes": "Server-to-server requests authenticate via x-api-key header from the FanBasis seller portal (Account > API Keys); frontend checkout widgets use short-lived Checkout Session Secrets.",
+    "access": "admin-approval",
+    "access_notes": "Developer docs portal (dev-docs.fanbasis.com) and API keys require a FanBasis seller/merchant account; official @fanbasis/checkout-sdk supports sandbox and production environments.",
+    "api_type": [
+     "REST"
+    ],
+    "api_breadth": "narrow",
+    "api_notes": "Public REST API (fanbasis.com/public-api) and official TypeScript SDK (@fanbasis/checkout-sdk) focused on checkout sessions, products, and webhooks.",
+    "buildability": "ready-with-friction",
+    "main_blocker": "seller/developer portal account required for API key and docs",
+    "human_needed": "create approved FanBasis seller account to access dev-docs and generate API key",
+    "confidence": "medium",
+    "evidence": {
+     "auth": "https://www.npmjs.com/package/@fanbasis/checkout-sdk",
+     "access": "https://dev-docs.fanbasis.com",
+     "api": "https://www.npmjs.com/package/@fanbasis/checkout-sdk",
+     "mcp": null
+    }
+   }
+  },
+  {
+   "id": 85,
+   "app": "iPayX",
+   "field": "primary_auth",
+   "agent": "none",
+   "human": "API key",
+   "match": false,
+   "url": "https://ipayx.ai/docs",
+   "note": "Official ipayx.ai/docs confirms MCP-native FX audit endpoints: free tier allows 10 audits/day per API key, and paid forensic reports use Bearer tokens.",
+   "patch": {
+    "auth_methods": [
+     "API key",
+     "Bearer token",
+     "none"
+    ],
+    "primary_auth": "API key",
+    "auth_notes": "Free-tier MCP tools enforce 10 audits/day per API key; paid full_forensic_fx_report requires a Bearer token.",
+    "access_notes": "Free self-serve tier (10 FX audits/day + mid-market rate lookups) via official MCP server; paid tier unlocks full forensic spread reports.",
+    "confidence": "medium",
+    "evidence": {
+     "auth": "https://ipayx.ai/docs",
+     "access": "https://ipayx.ai/docs",
+     "api": "https://ipayx.ai/docs",
+     "mcp": "https://ipayx.ai/docs"
+    }
+   }
+  },
+  {
+   "id": 90,
+   "app": "PitchBook",
+   "field": "buildability",
+   "agent": "blocked",
+   "human": "blocked",
+   "match": true,
+   "url": "https://pitchbook.com/help/pitchbook-api",
+   "note": "Confirmed standalone Direct Data API contract required; official MCP connectors also require enterprise PitchBook license + SSO."
+  },
+  {
+   "id": 96,
+   "app": "Devin",
+   "field": "access",
+   "agent": "paid-plan",
+   "human": "paid-plan",
+   "match": true,
+   "url": "https://docs.devin.ai/api-reference/authentication",
+   "note": "Follow-up on Loop 3 unverifiable flag: Devin now has a $0 Free tier, and PATs (cog_ Bearer tokens) exist in Settings > Devin API, but service-user API keys and production quotas remain on paid/team plans; updated access_notes to remove outdated 'No free tier found' claim.",
+   "patch": {
+    "access_notes": "Devin offers a $0 Free plan (light quota) plus Pro ($20/mo), Max ($200/mo), Teams ($80/mo base) and Enterprise. PATs (cog_ Bearer tokens) are created under Settings > Devin API, while service-user API keys and production agent quotas require paid/org tiers."
+   }
+  }
+ ],
+ "human_fixes": 5,
  "final_sample_acc": 100.0
 }
