@@ -70,7 +70,7 @@ table.t{width:100%;border-collapse:collapse;font-size:13px}table.t th{text-align
 <div class="step"><b>3 · Loop 1: validator</b><code>validate.py</code> checks the schema, allowed values and contradictions ("gated but ready", MCP without URL, missing evidence). It flagged 29/100.</div><div class="arrow">→</div>
 <div class="step"><b>4 · Loop 2: gap-fill agents</b>Every flagged record was re-researched from scratch. Unresolved apps went from 24 to 0.</div><div class="arrow">→</div>
 <div class="step"><b>5 · Loop 3: auditor agent</b>A separate agent with no stake in the answers re-opened the evidence for a random 20 apps × 5 fields, and wrong fields were corrected.</div><div class="arrow">→</div>
-<div class="step human"><b>6 · Human</b>Human work: defined the spec and verdict rules, judged edge cases (e.g. "trial = self-serve?"), and spot-checked the sample against the docs.</div>
+<div class="step human"><b>6 · Human</b>Human: defined the spec and verdict rules, ruled on the auditor's disputed calls (table below), and reviewed edge cases such as "does a trial count as self-serve?".</div>
 </div>
 <p class="mut">Runnable: <code>python3 agent/research_agent.py --ids 1-100 --out research/pass1/run.json</code> (Anthropic API + server-side web search/fetch), then <code>validate.py</code> → <code>research_agent.py --recheck</code> → <code>build.py</code>. See the <a href="https://github.com/piku020505/composio-app-research#readme">README</a>. The published dataset was produced by the same spec and loops, orchestrated as parallel Claude agents.</p>
 
@@ -106,7 +106,7 @@ table.t{width:100%;border-collapse:collapse;font-size:13px}table.t th{text-align
 <li><b>Docs drift.</b> Plans and gates change often (Google Ads retired developer tokens on 2026-09-09; Zendesk is sunsetting API tokens). Each row cites what the docs said on 2026-11-23.</li>
 <li><b>Self-serve trial vs free</b> is a judgement call. I count a free trial with working API access as self-serve, but separate it so it can be filtered out.</li>
 </ul>
-<p class="mut">Generated 2026-11-23 11:44 UTC by <code>agent/build.py</code>. Machine-readable: <a href="data.json">data.json</a> · <a href="data.csv">data.csv</a> · <a href="llms.txt">llms.txt</a>.</p>
+<p class="mut">Generated 2026-11-23 11:45 UTC by <code>agent/build.py</code>. Machine-readable: <a href="data.json">data.json</a> · <a href="data.csv">data.csv</a> · <a href="llms.txt">llms.txt</a>.</p>
 </div>
 <script>
 const q=document.getElementById('q'),fc=document.getElementById('fc'),fa=document.getElementById('fa'),fb=document.getElementById('fb'),cnt=document.getElementById('cnt');
