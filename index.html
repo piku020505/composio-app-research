@@ -22,8 +22,12 @@ table.t{width:100%;border-collapse:collapse;font-size:13px}table.t th{text-align
 .det{margin-top:4px;font-size:12px;color:var(--mut)}.det summary{cursor:pointer;color:var(--acc);font-size:11.5px;user-select:none}.det div{margin-top:4px;padding:6px 8px;background:var(--card);border:1px solid var(--line);border-radius:6px;line-height:1.45}
 .ev a{margin-right:6px;font-size:12px}.hit{color:var(--g2)}.miss{color:#ff8a80}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.filters select,.filters input,.filters button{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:7px 9px;font-size:13px}.filters button{cursor:pointer}.filters button:hover{border-color:var(--acc)}
 .big{font-size:44px;font-weight:700}.mut{color:var(--mut)}code{background:#1b2028;padding:1px 5px;border-radius:4px;font-size:12.5px}.honest li{margin:6px 0}
+.print-bar{display:none}
+@page{size:A4 landscape;margin:10mm}
+@media print{*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{background:#0b0d10;color:#e8eaed;font-size:11.5px}.wrap{max-width:none;padding:0}.nav,.filters,.det{display:none!important}.print-bar{display:block;margin:8px 0 12px;padding:8px 12px;background:#16203a;border:1px solid #2a3557;border-radius:8px;font-size:11.5px}.card,.stat,.head,.step,tr{break-inside:avoid}h2{margin-top:20px;padding-top:14px;break-after:avoid}table.t th{position:static}table.t{font-size:10.5px}table.t td,table.t th{padding:4px 5px}}
 </style></head><body><div class="wrap">
 <div class="k">Composio · AI Product Ops Intern take-home · Pravin Kumar Mahato</div>
+<div class="print-bar"><b>Live interactive page:</b> <a href="https://piku020505.github.io/composio-app-research/">https://piku020505.github.io/composio-app-research/</a> &nbsp;·&nbsp; <b>Source repo:</b> <a href="https://github.com/piku020505/composio-app-research">https://github.com/piku020505/composio-app-research</a> &nbsp;·&nbsp; <b>Data:</b> <a href="https://piku020505.github.io/composio-app-research/data.json">data.json</a> · <a href="https://piku020505.github.io/composio-app-research/data.csv">data.csv</a> · <a href="https://piku020505.github.io/composio-app-research/llms.txt">llms.txt</a></div>
 <h1>Of 100 requested apps, 60 can become agent toolkits today. For most of the other 40, the blocker is access, not technology.</h1>
 <p class="lede">An agent pipeline researched auth, access gates, API surface and existing MCP for each app, citing the vendor's docs for every answer. Deterministic checks, an independent auditor agent, and a manual human spot-check then verified and corrected it. <b>Read the headline, skim the matrix, open any row's evidence.</b></p>
 <div class="nav"><a href="#patterns">Patterns</a><a href="#matrix">Matrix</a><a href="#wins">Easy wins vs outreach</a><a href="#agent">The agent</a><a href="#verify">Verification</a><a href="#table">All 100 apps</a><a href="#honest">What I got wrong</a><a href="data.json">data.json</a><a href="data.csv">data.csv</a><a href="llms.txt">llms.txt</a><a href="https://github.com/piku020505/composio-app-research">Source repo</a></div>
@@ -112,7 +116,7 @@ table.t{width:100%;border-collapse:collapse;font-size:13px}table.t th{text-align
 <li><b>Docs drift.</b> Plans and gates change often (Google Ads retired developer tokens on 2026-09-09; Zendesk is sunsetting API tokens; SendGrid retired its permanent free tier). Each row cites what the docs said on 2026-11-23.</li>
 <li><b>Self-serve trial vs free</b> is a judgement call. I count a free trial with working API access as self-serve, but separate it so it can be filtered out.</li>
 </ul>
-<p class="mut">Generated 2026-11-23 14:03 UTC by <code>agent/build.py</code>. Machine-readable: <a href="data.json">data.json</a> · <a href="data.csv">data.csv</a> · <a href="llms.txt">llms.txt</a>.</p>
+<p class="mut">Generated 2026-11-23 16:11 UTC by <code>agent/build.py</code>. Machine-readable: <a href="data.json">data.json</a> · <a href="data.csv">data.csv</a> · <a href="llms.txt">llms.txt</a>.</p>
 </div>
 <script>
 const q=document.getElementById('q'),fc=document.getElementById('fc'),fa=document.getElementById('fa'),fb=document.getElementById('fb'),fm=document.getElementById('fm'),cnt=document.getElementById('cnt');
