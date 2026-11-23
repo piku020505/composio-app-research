@@ -12,7 +12,7 @@ Full data: data.json / data.csv
 - 7. Zoho CRM [CRM and Sales] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
 - 8. Close [CRM and Sales] auth=API key access=self-serve-trial mcp=official build=ready blocker=none
 - 9. Copper [CRM and Sales] auth=API key access=self-serve-trial mcp=community build=ready blocker=none
-- 10. DealCloud [CRM and Sales] auth=OAuth2 access=paid-plan mcp=official build=blocked blocker=enterprise customer tenant required (sales)
+- 10. DealCloud [CRM and Sales] auth=OAuth2 access=partner-gated mcp=official build=blocked blocker=enterprise customer tenant required (sales)
 - 11. Zendesk [Support and Helpdesk] auth=OAuth2 access=self-serve-trial mcp=community build=ready-with-friction blocker=global OAuth client approval
 - 12. Intercom [Support and Helpdesk] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
 - 13. Freshdesk [Support and Helpdesk] auth=API key access=self-serve-trial mcp=official build=ready blocker=none
@@ -22,7 +22,7 @@ Full data: data.json / data.csv
 - 17. Plain [Support and Helpdesk] auth=API key access=self-serve-trial mcp=official build=ready blocker=none
 - 18. Help Scout [Support and Helpdesk] auth=OAuth2 access=self-serve-trial mcp=official build=ready blocker=none
 - 19. Gorgias [Support and Helpdesk] auth=API key access=self-serve-trial mcp=official build=ready blocker=none
-- 20. Gladly [Support and Helpdesk] auth=Basic access=paid-plan mcp=community build=blocked blocker=sales contact required for an account
+- 20. Gladly [Support and Helpdesk] auth=Basic access=partner-gated mcp=community build=blocked blocker=sales contact required for an account
 - 21. Slack [Communications and Messaging] auth=OAuth2 access=self-serve-free mcp=official build=ready-with-friction blocker=Marketplace approval needed for full rate limits on distributed apps
 - 22. Twilio [Communications and Messaging] auth=Basic access=self-serve-trial mcp=official build=ready blocker=none
 - 23. Zoho Cliq [Communications and Messaging] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
@@ -52,7 +52,7 @@ Full data: data.json / data.csv
 - 47. Ecwid [Ecommerce] auth=OAuth2 access=paid-plan mcp=community build=ready-with-friction blocker=paid plan required
 - 48. Gumroad [Ecommerce] auth=OAuth2 access=self-serve-free mcp=official build=ready blocker=none
 - 49. Amazon Selling Partner [Ecommerce] auth=OAuth2 access=partner-gated mcp=official build=ready-with-friction blocker=developer registration and role approval; Professional seller account
-- 50. fanbasis [Ecommerce] auth=other access=no-public-api mcp=none-found build=blocked blocker=no public API
+- 50. fanbasis [Ecommerce] auth=API key access=admin-approval mcp=none-found build=ready-with-friction blocker=seller/developer portal account required for API key and docs
 - 51. DataForSEO [Data, SEO and Scraping] auth=Basic access=self-serve-trial mcp=official build=ready blocker=none
 - 52. SE Ranking [Data, SEO and Scraping] auth=API key access=self-serve-trial mcp=official build=ready blocker=none
 - 53. Ahrefs [Data, SEO and Scraping] auth=Bearer token access=paid-plan mcp=official build=ready-with-friction blocker=paid plan required
@@ -87,7 +87,7 @@ Full data: data.json / data.csv
 - 82. Plaid [Finance and Fintech] auth=API key access=self-serve-free mcp=official build=ready blocker=none
 - 83. Binance [Finance and Fintech] auth=Signature/HMAC access=self-serve-free mcp=official build=ready-with-friction blocker=KYC'd (Verified Plus) funded account; regional restrictions
 - 84. Paygent Connect [Finance and Fintech] auth=other access=no-public-api mcp=none-found build=blocked blocker=no public API / product not identifiable
-- 85. iPayX [Finance and Fintech] auth=none access=self-serve-free mcp=official build=ready-with-friction blocker=no documented public REST API; only small MCP surface
+- 85. iPayX [Finance and Fintech] auth=API key access=self-serve-free mcp=official build=ready-with-friction blocker=no documented public REST API; only small MCP surface
 - 86. QuickBooks [Finance and Fintech] auth=OAuth2 access=self-serve-free mcp=official build=ready-with-friction blocker=metered CorePlus read calls; production key review (unverified)
 - 87. Xero [Finance and Fintech] auth=OAuth2 access=self-serve-free mcp=official build=ready-with-friction blocker=app certification and paid tier beyond 5 connections
 - 88. Brex [Finance and Fintech] auth=Bearer token access=admin-approval mcp=official build=ready-with-friction blocker=Brex customer account required; no sandbox; partner OAuth via support
