@@ -297,7 +297,7 @@ table.t{{width:100%;border-collapse:collapse;font-size:13px}}table.t th{{text-al
 <div class="step"><b>3 · Loop 1: validator</b><code>validate.py</code> checks the schema, allowed values and contradictions ("gated but ready", MCP without URL, missing evidence). It flagged {m['loop1_flagged']}/100.</div><div class="arrow">→</div>
 <div class="step"><b>4 · Loop 2: gap-fill agents</b>Every flagged record was re-researched from scratch. Unresolved apps went from {m['unresolved_p1']} to {m['unresolved_final']}.</div><div class="arrow">→</div>
 <div class="step"><b>5 · Loop 3: auditor agent</b>A separate agent with no stake in the answers re-opened the evidence for a random 20 apps × 5 fields, and wrong fields were corrected.</div><div class="arrow">→</div>
-<div class="step human"><b>6 · Human</b>Human work: defined the spec and verdict rules, judged edge cases (e.g. "trial = self-serve?"), and spot-checked the sample against the docs.</div>
+<div class="step human"><b>6 · Human</b>Human: defined the spec and verdict rules, ruled on the auditor's disputed calls (table below), and reviewed edge cases such as "does a trial count as self-serve?".</div>
 </div>
 <p class="mut">Runnable: <code>python3 agent/research_agent.py --ids 1-100 --out research/pass1/run.json</code> (Anthropic API + server-side web search/fetch), then <code>validate.py</code> → <code>research_agent.py --recheck</code> → <code>build.py</code>. See the <a href="https://github.com/piku020505/composio-app-research#readme">README</a>. The published dataset was produced by the same spec and loops, orchestrated as parallel Claude agents.</p>
 
