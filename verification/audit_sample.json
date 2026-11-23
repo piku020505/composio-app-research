@@ -1,0 +1,742 @@
+[
+ {
+  "id": 22,
+  "app": "Twilio",
+  "fields": {
+   "primary_auth": {
+    "claimed": "Basic",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://www.twilio.com/docs/usage/requests-to-twilio"
+   },
+   "access": {
+    "claimed": "self-serve-trial",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://www.twilio.com/docs/usage/trials"
+   },
+   "api_type": {
+    "claimed": "REST",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://www.twilio.com/docs/usage/requests-to-twilio"
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://www.twilio.com/docs/mcp"
+   },
+   "buildability": {
+    "claimed": "ready",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://www.twilio.com/docs/usage/trials"
+   }
+  },
+  "notes": "Basic auth (API key SID/secret or Account SID/Auth token) confirmed. Free trial, no card, 30 days. Official hosted MCP at mcp.twilio.com is Public Beta."
+ },
+ {
+  "id": 24,
+  "app": "Lark (Larksuite)",
+  "fields": {
+   "primary_auth": {
+    "claimed": "OAuth2",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://open.larksuite.com/document/server-docs/getting-started/overview-of-app-scopes.md"
+   },
+   "access": {
+    "claimed": "self-serve-free",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://www.larksuite.com/en_us/pricing"
+   },
+   "api_type": {
+    "claimed": "REST",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://www.npmjs.com/package/@larksuiteoapi/lark-mcp"
+   },
+   "buildability": {
+    "claimed": "ready-with-friction",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://open.larksuite.com/document/server-docs/getting-started/overview-of-app-scopes.md"
+   }
+  },
+  "notes": "Main server auth for custom apps is tenant_access_token (app_id/secret); OAuth2 user_access_token also exists, so OAuth2 accepted. Free Starter plan exists but pricing page does not state custom-app/API inclusion. Store apps need platform review + tenant admin review -> friction plausible."
+ },
+ {
+  "id": 44,
+  "app": "Salesforce Commerce Cloud",
+  "fields": {
+   "primary_auth": {
+    "claimed": "OAuth2",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://developer.salesforce.com/docs/commerce/commerce-solutions/guide/scapi-get-started.html"
+   },
+   "access": {
+    "claimed": "partner-gated",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/b2c-get-started-sandboxes.html"
+   },
+   "api_type": {
+    "claimed": "REST",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/mcp-dx-intro.html"
+   },
+   "buildability": {
+    "claimed": "blocked",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/b2c-get-started-sandboxes.html"
+   }
+  },
+  "notes": "Sandboxes need purchased credits + realm ID from AE/CSM; no free dev edition. Official @salesforce/b2c-dx-mcp exists."
+ },
+ {
+  "id": 51,
+  "app": "DataForSEO",
+  "fields": {
+   "primary_auth": {
+    "claimed": "Basic",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://docs.dataforseo.com/v3/auth/"
+   },
+   "access": {
+    "claimed": "self-serve-trial",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://dataforseo.com/seo-mcp-server"
+   },
+   "api_type": {
+    "claimed": "REST",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://docs.dataforseo.com/v3/auth/"
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://dataforseo.com/seo-mcp-server"
+   },
+   "buildability": {
+    "claimed": "ready",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   }
+  },
+  "notes": "$1 free credit, no card; vendor-published open-source MCP. GitHub repo URL itself not fetchable (allowlist) but vendor page links it."
+ },
+ {
+  "id": 54,
+  "app": "MrScraper",
+  "fields": {
+   "primary_auth": {
+    "claimed": "API key",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://docs.mrscraper.com/docs/api/authentication"
+   },
+   "access": {
+    "claimed": "self-serve-free",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://docs.mrscraper.com/docs/getting-started/billing"
+   },
+   "api_type": {
+    "claimed": "REST",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://docs.mrscraper.com/docs/getting-started/mcp-server"
+   },
+   "buildability": {
+    "claimed": "ready",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   }
+  },
+  "notes": "x-api-token header (API key). Free plan lists API Tokens, no card. Official MCP confirmed."
+ },
+ {
+  "id": 58,
+  "app": "Sherlock",
+  "fields": {
+   "primary_auth": {
+    "claimed": "none",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://github.com/sherlock-project/sherlock"
+   },
+   "access": {
+    "claimed": "self-serve-free",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://github.com/sherlock-project/sherlock"
+   },
+   "api_type": {
+    "claimed": "SDK/CLI only",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://github.com/sherlock-project/sherlock"
+   },
+   "existing_mcp": {
+    "claimed": "community",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://glama.ai/mcp/servers/Burnsedia/sherlock-mcp"
+   },
+   "buildability": {
+    "claimed": "ready-with-friction",
+    "verdict": "wrong",
+    "correct_value": "blocked",
+    "url": "https://github.com/sherlock-project/sherlock"
+   }
+  },
+  "notes": "Local MIT CLI with no hosted API. Spec defines blocked as 'no public API'; ready-with-friction requires 'public API exists'. Strictly blocked (wrapping the CLI is a hosting decision, not an API). Community MCP marked inactive on Glama."
+ },
+ {
+  "id": 60,
+  "app": "Clay",
+  "fields": {
+   "primary_auth": {
+    "claimed": "API key",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://developers.clay.com/public-api/authentication"
+   },
+   "access": {
+    "claimed": "self-serve-free",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://university.clay.com/docs/clay-api-cli"
+   },
+   "api_type": {
+    "claimed": "REST",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://developers.clay.com/llms.txt"
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://mcpservers.org/remote-mcp-servers/clay"
+   },
+   "buildability": {
+    "claimed": "ready",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   }
+  },
+  "notes": "clay-api-key header. Developer platform on all plans incl. free (free capped at 100 results/30 days). MCP evidence is a third-party directory; Clay University mentions 'MCP for Reps', consistent with official."
+ },
+ {
+  "id": 61,
+  "app": "GitHub",
+  "fields": {
+   "primary_auth": {
+    "claimed": "OAuth2",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "access": {
+    "claimed": "self-serve-free",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "api_type": {
+    "claimed": "REST",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://github.blog/changelog/2025-04-04-github-mcp-server-public-preview/"
+   },
+   "buildability": {
+    "claimed": "ready",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   }
+  },
+  "notes": "Official github/github-mcp-server confirmed. Auth/access/API not re-fetched from docs.github.com; values are standard and uncontroversial."
+ },
+ {
+  "id": 62,
+  "app": "Vercel",
+  "fields": {
+   "primary_auth": {
+    "claimed": "OAuth2",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://vercel.com/docs/integrations/vercel-api-overview"
+   },
+   "access": {
+    "claimed": "self-serve-free",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "api_type": {
+    "claimed": "REST",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://vercel.com/docs/agent-resources/vercel-mcp"
+   },
+   "buildability": {
+    "claimed": "ready",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   }
+  },
+  "notes": "REST API uses Bearer access tokens; integrations get them via OAuth code exchange (/v2/oauth/access_token). OAuth2 acceptable for a multi-user toolkit, though 'Bearer token' would also be defensible. Official MCP at mcp.vercel.com, all plans."
+ },
+ {
+  "id": 63,
+  "app": "Netlify",
+  "fields": {
+   "primary_auth": {
+    "claimed": "OAuth2",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://docs.netlify.com/api/get-started"
+   },
+   "access": {
+    "claimed": "self-serve-free",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://docs.netlify.com/api/get-started"
+   },
+   "api_type": {
+    "claimed": "REST",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://docs.netlify.com/welcome/build-with-ai/netlify-mcp-server"
+   },
+   "buildability": {
+    "claimed": "ready",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   }
+  },
+  "notes": "Docs: public integrations must use OAuth2; PATs for personal use. Official MCP confirmed."
+ },
+ {
+  "id": 64,
+  "app": "Cloudflare",
+  "fields": {
+   "primary_auth": {
+    "claimed": "Bearer token",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://developers.cloudflare.com/fundamentals/api/get-started/index/"
+   },
+   "access": {
+    "claimed": "self-serve-free",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "api_type": {
+    "claimed": "REST",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare"
+   },
+   "buildability": {
+    "claimed": "ready",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   }
+  },
+  "notes": "API tokens recommended (sent as Bearer). Free-plan API access not stated on fetched page but is standard."
+ },
+ {
+  "id": 71,
+  "app": "Notion",
+  "fields": {
+   "primary_auth": {
+    "claimed": "OAuth2",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://developers.notion.com/guides/get-started/authorization"
+   },
+   "access": {
+    "claimed": "self-serve-free",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "api_type": {
+    "claimed": "REST",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://developers.notion.com/guides/mcp/get-started-with-mcp"
+   },
+   "buildability": {
+    "claimed": "ready",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   }
+  },
+  "notes": "Internal token, PAT, and OAuth 2.0 documented; no plan requirement stated. Official MCP mcp.notion.com/mcp."
+ },
+ {
+  "id": 73,
+  "app": "Linear",
+  "fields": {
+   "primary_auth": {
+    "claimed": "OAuth2",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://linear.app/docs/api-and-webhooks"
+   },
+   "access": {
+    "claimed": "self-serve-free",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://linear.app/pricing.md"
+   },
+   "api_type": {
+    "claimed": "GraphQL",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://linear.app/docs/mcp"
+   },
+   "buildability": {
+    "claimed": "ready",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   }
+  },
+  "notes": "Pricing table: Free plan 'API and webhook access: Included' (now verified, was inferred)."
+ },
+ {
+  "id": 74,
+  "app": "Jira",
+  "fields": {
+   "primary_auth": {
+    "claimed": "OAuth2",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps/"
+   },
+   "access": {
+    "claimed": "self-serve-free",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps/"
+   },
+   "api_type": {
+    "claimed": "REST",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://developer.atlassian.com/cloud/rovo-mcp/"
+   },
+   "buildability": {
+    "claimed": "ready",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   }
+  },
+  "notes": "3LO apps self-serve, private by default, sharing without approval (warning shown). Rovo MCP official at mcp.atlassian.com/v2/mcp."
+ },
+ {
+  "id": 75,
+  "app": "Asana",
+  "fields": {
+   "primary_auth": {
+    "claimed": "OAuth2",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "access": {
+    "claimed": "self-serve-trial",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://help.asana.com/s/article/api"
+   },
+   "api_type": {
+    "claimed": "REST",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://developers.asana.com/docs/using-asanas-mcp-server"
+   },
+   "buildability": {
+    "claimed": "ready",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   }
+  },
+  "notes": "Help article lists API only for paid tiers (Personal/free absent), so self-serve-trial is the correct strict reading given Asana's paid-plan trial; existence of no-card trial not re-verified here."
+ },
+ {
+  "id": 77,
+  "app": "ClickUp",
+  "fields": {
+   "primary_auth": {
+    "claimed": "OAuth2",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://developer.clickup.com/docs/authentication"
+   },
+   "access": {
+    "claimed": "self-serve-free",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://developer.clickup.com/docs/apis-available-by-plan"
+   },
+   "api_type": {
+    "claimed": "REST",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://help.clickup.com/hc/en-us/articles/33335772678423-What-is-ClickUp-MCP"
+   },
+   "buildability": {
+    "claimed": "ready",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   }
+  },
+  "notes": "Public API on all plans; user/guest mgmt Enterprise-only. Official MCP on all plans."
+ },
+ {
+  "id": 78,
+  "app": "Coda",
+  "fields": {
+   "primary_auth": {
+    "claimed": "Bearer token",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://coda.io/developers/apis/v1"
+   },
+   "access": {
+    "claimed": "self-serve-free",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://coda.io/developers/apis/v1"
+   },
+   "api_type": {
+    "claimed": "REST",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://help.superhuman.com/hc/en-us/articles/46210076980365-Connect-to-the-Coda-MCP"
+   },
+   "buildability": {
+    "claimed": "ready",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   }
+  },
+  "notes": "Bearer token only (no OAuth documented). Coda MCP is being superseded by Superhuman Docs MCP (docs.superhuman.com/apis/mcp); still vendor-official."
+ },
+ {
+  "id": 82,
+  "app": "Plaid",
+  "fields": {
+   "primary_auth": {
+    "claimed": "API key",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://www.plaid.com/docs/api"
+   },
+   "access": {
+    "claimed": "self-serve-free",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://support.plaid.com/hc/en-us/articles/16110110883479-How-are-Sandbox-Production-Trial-plan-and-Limited-Production-different"
+   },
+   "api_type": {
+    "claimed": "REST",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://plaid.com/en-eu/blog/plaid-mcp-ai-assistant-claude/"
+   },
+   "buildability": {
+    "claimed": "ready-with-friction",
+    "verdict": "wrong",
+    "correct_value": "ready",
+    "url": "https://support.plaid.com/hc/en-us/articles/16110110883479-How-are-Sandbox-Production-Trial-plan-and-Limited-Production-different"
+   }
+  },
+  "notes": "client_id+secret (API key). Sandbox free with no approval and Trial plan free/auto-approved with real data -> meets spec 'ready' (self-serve creds + documented API). Full-production approval is a scale concern, not a build blocker. Borderline call. Official MCP is a Dashboard analytics MCP (not data access)."
+ },
+ {
+  "id": 86,
+  "app": "QuickBooks",
+  "fields": {
+   "primary_auth": {
+    "claimed": "OAuth2",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "access": {
+    "claimed": "self-serve-free",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "api_type": {
+    "claimed": "REST",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "buildability": {
+    "claimed": "ready-with-friction",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   }
+  },
+  "notes": "Intuit docs render client-side (fetch returned loading shell), so not re-confirmed from page text; OAuth2, free developer sandbox, REST, and official intuit/quickbooks-online-mcp-server are well established. Friction (production-key assessment, metered CorePlus) reasonable."
+ },
+ {
+  "id": 96,
+  "app": "Devin",
+  "fields": {
+   "primary_auth": {
+    "claimed": "Bearer token",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://docs.devin.ai/api-reference/authentication"
+   },
+   "access": {
+    "claimed": "paid-plan",
+    "verdict": "unverifiable",
+    "correct_value": null,
+    "url": "https://docs.devin.ai/admin/billing/self-serve.md"
+   },
+   "api_type": {
+    "claimed": "REST",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": null
+   },
+   "existing_mcp": {
+    "claimed": "official",
+    "verdict": "correct",
+    "correct_value": null,
+    "url": "https://docs.devin.ai/work-with-devin/devin-mcp"
+   },
+   "buildability": {
+    "claimed": "ready-with-friction",
+    "verdict": "unverifiable",
+    "correct_value": null,
+    "url": "https://cognition.com/blog/new-self-serve-plans-for-devin"
+   }
+  },
+  "notes": "Record says 'No free tier found', but Devin now has a Free $0 self-serve plan (plus Pro $20, Max $200, Teams $80). No source states whether Free/Pro include API keys; access_notes claim is outdated. If Free includes PAT/API, access->self-serve-free and buildability->ready."
+ }
+]

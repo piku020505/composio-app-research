@@ -1,0 +1,392 @@
+{
+ "n_records": 100,
+ "missing_ids": [],
+ "duplicate_ids": [],
+ "flagged": [
+  {
+   "id": 8,
+   "app": "Close",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "bad_value:buildability=unknown",
+    "bad_value:api_type=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 9,
+   "app": "Copper",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "bad_value:buildability=unknown",
+    "bad_value:api_type=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 10,
+   "app": "DealCloud",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "bad_value:buildability=unknown",
+    "bad_value:api_type=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 16,
+   "app": "LiveAgent",
+   "flags": [
+    "bad_value:api_breadth=unknown"
+   ]
+  },
+  {
+   "id": 17,
+   "app": "Plain",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "bad_value:buildability=unknown",
+    "bad_value:api_type=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 18,
+   "app": "Help Scout",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "bad_value:buildability=unknown",
+    "bad_value:api_type=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 19,
+   "app": "Gorgias",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "bad_value:buildability=unknown",
+    "bad_value:api_type=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 20,
+   "app": "Gladly",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "bad_value:buildability=unknown",
+    "bad_value:api_type=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 35,
+   "app": "Mailchimp",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "bad_value:buildability=unknown",
+    "bad_value:api_type=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 36,
+   "app": "Klaviyo",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "bad_value:buildability=unknown",
+    "bad_value:api_type=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 37,
+   "app": "systeme.io",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "bad_value:buildability=unknown",
+    "bad_value:api_type=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 38,
+   "app": "Pinterest",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "bad_value:buildability=unknown",
+    "bad_value:api_type=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 39,
+   "app": "Threads (Meta)",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "bad_value:buildability=unknown",
+    "bad_value:api_type=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 40,
+   "app": "SendGrid",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "bad_value:buildability=unknown",
+    "bad_value:api_type=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 45,
+   "app": "Magento (Adobe Commerce)",
+   "flags": [
+    "bad_value:access=unknown",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 47,
+   "app": "Ecwid",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "bad_value:buildability=unknown",
+    "bad_value:api_type=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 48,
+   "app": "Gumroad",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "bad_value:buildability=unknown",
+    "bad_value:api_type=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 49,
+   "app": "Amazon Selling Partner",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "bad_value:buildability=unknown",
+    "bad_value:api_type=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 50,
+   "app": "fanbasis",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "bad_value:buildability=unknown",
+    "bad_value:api_type=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 59,
+   "app": "Waterfall.io",
+   "flags": [
+    "bad_value:access=unknown",
+    "no_evidence:access",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 68,
+   "app": "MongoDB Atlas",
+   "flags": [
+    "contradiction:ready_but_has_blocker"
+   ]
+  },
+  {
+   "id": 84,
+   "app": "Paygent Connect",
+   "flags": [
+    "bad_value:access=unknown",
+    "contradiction:no_api_surface_but_access_given",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 85,
+   "app": "iPayX",
+   "flags": [
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 87,
+   "app": "Xero",
+   "flags": [
+    "bad_value:access=unknown",
+    "no_evidence:access",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 88,
+   "app": "Brex",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 89,
+   "app": "Ramp",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 90,
+   "app": "PitchBook",
+   "flags": [
+    "bad_value:primary_auth=unknown",
+    "bad_value:access=unknown",
+    "bad_value:api_breadth=unknown",
+    "bad_value:existing_mcp=unknown",
+    "no_evidence:auth",
+    "no_evidence:access",
+    "no_evidence:api",
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 92,
+   "app": "Otter AI",
+   "flags": [
+    "low_confidence"
+   ]
+  },
+  {
+   "id": 98,
+   "app": "Mermaid CLI",
+   "flags": [
+    "contradiction:ready_but_has_blocker"
+   ]
+  }
+ ],
+ "n_flagged": 29
+}

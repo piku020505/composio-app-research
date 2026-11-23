@@ -1,0 +1,528 @@
+[
+ {
+  "id": 40,
+  "app": "SendGrid",
+  "category": "Marketing, Ads, Email and Social",
+  "what_it_does": "Twilio's transactional and marketing email delivery service.",
+  "auth_methods": [
+   "API key",
+   "Bearer token"
+  ],
+  "primary_auth": "API key",
+  "auth_notes": "v3 API uses an API key (created in Settings > API Keys, scoped by permissions) sent as 'Authorization: Bearer <key>'. Basic auth not documented on the auth page.",
+  "access": "self-serve-trial",
+  "access_notes": "Self-serve signup gives a 60-day free trial (up to 100 emails/day) per a Twilio developer blog; no permanent free tier mentioned. Sending also needs a verified sender/domain.",
+  "api_type": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "v3 REST API: mail send, API keys and permissions, contacts/marketing, templates, stats, suppressions, sender authentication, subusers, webhooks.",
+  "existing_mcp": "community",
+  "mcp_url": "https://mcpservers.org/servers/deyikong/sendgrid-mcp",
+  "buildability": "ready",
+  "main_blocker": "none",
+  "human_needed": "verify a sender identity/domain before sending",
+  "confidence": "medium",
+  "evidence": {
+   "auth": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication.md",
+   "access": "https://www.twilio.com/en-us/blog/developers/community/build-a-sendgrid-mcp-server-for-ai-email-workflows",
+   "api": "https://www.twilio.com/docs/sendgrid/api-reference/api-keys",
+   "mcp": "https://mcpservers.org/servers/deyikong/sendgrid-mcp"
+  },
+  "round2_change": "Fully researched from scratch: API key/Bearer auth, 60-day trial access, community MCP; was entirely unknown.",
+  "notes": ""
+ },
+ {
+  "id": 45,
+  "app": "Magento (Adobe Commerce)",
+  "category": "Ecommerce",
+  "what_it_does": "Open-source or Adobe-licensed ecommerce platform with REST/GraphQL/SOAP web APIs.",
+  "auth_methods": [
+   "Bearer token",
+   "OAuth2",
+   "other"
+  ],
+  "primary_auth": "Bearer token",
+  "auth_notes": "Admin/customer token-based (Bearer) auth; Integration credentials using OAuth 1.0a (listed as 'other'/OAuth-style); session cookie auth for storefront JS. Adobe Commerce as a Cloud Service/SaaS uses separate IMS-based REST auth. Every store has its own base URL.",
+  "access": "self-serve-free",
+  "access_notes": "Adobe describes Magento Open Source as 'a free eCommerce platform' that can be downloaded and self-hosted, so a developer can stand up a test store and create an integration/token alone. Adobe Commerce (PaaS/SaaS) is a paid licensed product.",
+  "api_type": [
+   "REST",
+   "GraphQL",
+   "SOAP"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST, SOAP and GraphQL web APIs covering catalog, orders, customers, inventory, carts, CMS; resources defined per module in webapi.xml.",
+  "existing_mcp": "community",
+  "mcp_url": "https://packagist.org/packages/angeo/module-mcp-server",
+  "buildability": "ready-with-friction",
+  "main_blocker": "per-store self-hosted base URL; store admin must create integration/token",
+  "human_needed": "store admin creates integration or admin token for each store",
+  "confidence": "medium",
+  "evidence": {
+   "auth": "https://developer.adobe.com/commerce/webapi/get-started/authentication",
+   "access": "https://business.adobe.com/products/magento/open-source",
+   "api": "https://developer.adobe.com/commerce/webapi/get-started/",
+   "mcp": "https://developer.adobe.com/commerce/extensibility/developer-agent/tools-overview"
+  },
+  "notes": "Adobe's own MCP servers (App Builder MCP, Dropins MCP) are developer tooling, not store-data connectors, so store-data MCP is community (Marketplace/Packagist modules such as angeo/module-mcp-server, scandiweb write-up). OAuth 1.0a integrations mapped to OAuth2+other since OAuth1 is not an allowed value.",
+  "round2_change": "Confirmed Magento Open Source is free to self-host (access now self-serve-free) and downgraded MCP from official to community since Adobe's MCPs are dev tooling only."
+ },
+ {
+  "id": 47,
+  "app": "Ecwid",
+  "category": "Ecommerce",
+  "what_it_does": "Embeddable online store builder by Lightspeed for adding shops to sites.",
+  "auth_methods": [
+   "OAuth2",
+   "Bearer token"
+  ],
+  "primary_auth": "OAuth2",
+  "auth_notes": "REST API uses OAuth 2.0 (simplified for single-store custom apps); custom apps created in the store admin's app dashboard get access tokens directly; public App Market apps use the OAuth flow.",
+  "access": "paid-plan",
+  "access_notes": "Docs state 'Only stores on paid plans can access API.' Ecwid support can grant a free paid-plan upgrade for test stores/app development on request by email.",
+  "api_type": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Store profile, orders, abandoned carts, products/variations/reviews, customers and groups, categories, discounts/coupons, payment/shipping settings; 600 req/min per token.",
+  "existing_mcp": "community",
+  "mcp_url": "https://zapier.com/mcp/ecwid",
+  "buildability": "ready-with-friction",
+  "main_blocker": "paid plan required",
+  "human_needed": "subscribe to a paid Ecwid plan or email support for a free dev-store upgrade",
+  "confidence": "high",
+  "evidence": {
+   "auth": "https://docs.ecwid.com/api-reference",
+   "access": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+   "api": "https://docs.ecwid.com/api-reference",
+   "mcp": "https://zapier.com/mcp/ecwid"
+  },
+  "notes": "No official Ecwid/Lightspeed MCP found; Zapier (third-party hosted) and other aggregators offer Ecwid MCP actions.",
+  "round2_change": "Fully researched: OAuth2 REST API, paid plan required (free dev upgrade on request), third-party MCP; was entirely unknown."
+ },
+ {
+  "id": 48,
+  "app": "Gumroad",
+  "category": "Ecommerce",
+  "what_it_does": "Platform for creators to sell digital products and memberships.",
+  "auth_methods": [
+   "OAuth2",
+   "Bearer token"
+  ],
+  "primary_auth": "OAuth2",
+  "auth_notes": "Create an application in Settings > Advanced; generate a personal access token (non-expiring) for own account, or use OAuth 2.0 auth-code flow (client_id/secret, refresh tokens) for other accounts. Token sent as Bearer.",
+  "access": "self-serve-free",
+  "access_notes": "Any Gumroad account can create an application and token; no plan requirement mentioned.",
+  "api_type": [
+   "REST"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "v2 API at api.gumroad.com: user, products, sales (refund/ship), licenses, subscribers, offer codes, variants, custom fields, payouts, resource subscriptions (webhooks).",
+  "existing_mcp": "official",
+  "mcp_url": "https://gumroad.com/mcp",
+  "buildability": "ready",
+  "main_blocker": "none",
+  "human_needed": "none",
+  "confidence": "high",
+  "evidence": {
+   "auth": "https://gumroad.com/help/article/280-create-application-api",
+   "access": "https://gumroad.com/help/article/280-create-application-api",
+   "api": "https://www.mintlify.com/antiwork/gumroad/api/overview",
+   "mcp": "https://gumroad.com/mcp"
+  },
+  "notes": "Endpoint list comes from the Mintlify-hosted docs of Gumroad's open-source repo (antiwork/gumroad). Community MCPs also exist (rmarescu/gumroad-mcp).",
+  "round2_change": "Fully researched: OAuth2/personal token, free self-serve, moderate REST API, official OAuth MCP; was entirely unknown."
+ },
+ {
+  "id": 49,
+  "app": "Amazon Selling Partner",
+  "category": "Ecommerce",
+  "what_it_does": "Amazon API for sellers and vendors to manage listings, orders and fulfillment.",
+  "auth_methods": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "auth_notes": "Login with Amazon (LWA), Amazon's OAuth 2.0: private apps self-authorize (refresh token) in draft; public apps use Appstore or website authorization workflows.",
+  "access": "partner-gated",
+  "access_notes": "Must register as an SP-API developer in the Solution Provider Portal: private seller apps need a Professional selling account (paid) and primary account user; submit developer profile with security-control answers and request each role (restricted roles need qualification). Public developers must list in the Appstore. Planned $1,400/yr + GET-call fees were delayed and then reported cancelled (Amazon email, 12 May 2026).",
+  "api_type": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Dozens of SP-API sections: orders, listings, catalog, feeds, reports, FBA inventory/fulfillment, finances, notifications, pricing, vendor APIs; access gated by role.",
+  "existing_mcp": "official",
+  "mcp_url": "https://sellingpartner-ai.amazon.com/mcp",
+  "buildability": "ready-with-friction",
+  "main_blocker": "developer registration and role approval; Professional seller account",
+  "human_needed": "register in Solution Provider Portal, pass developer profile review and request roles",
+  "confidence": "medium",
+  "evidence": {
+   "auth": "https://docs.aws.amazon.com/prescriptive-guidance/latest/strategy-gen-ai-selling-partner-api/integrating-sp-api.html",
+   "access": "https://developer.amazonservices.com/private-developer",
+   "api": "https://docs.aws.amazon.com/prescriptive-guidance/latest/strategy-gen-ai-selling-partner-api/integrating-sp-api.html",
+   "mcp": "https://claudemarketplaces.com/plugins/anthropics-claude-plugins-official/amazon-selling-partner"
+  },
+  "notes": "Official MCP is from amzn/selling-partner-agentic-toolkit (Seller Central OAuth). Fee status from developer.amazonservices.com/spp-announcement (delayed) and novadata.io (cancelled), the latter a third-party report.",
+  "round2_change": "Fully researched: LWA OAuth2, Professional account + developer/role approval gate, official Amazon MCP, fee cancellation noted; was entirely unknown."
+ },
+ {
+  "id": 50,
+  "app": "fanbasis",
+  "category": "Ecommerce",
+  "what_it_does": "Checkout, payments and financing platform for high-ticket digital businesses.",
+  "auth_methods": [
+   "other"
+  ],
+  "primary_auth": "other",
+  "auth_notes": "No public API auth docs found. Third-party builder (Emergent) mentions 'API credentials' and a FanBasis Checkout SDK without detail; Zapier app uses account connection.",
+  "access": "no-public-api",
+  "access_notes": "fanbasis.com mentions '7000+ App Integrations' (via Zapier) but no API, developer docs or API keys; access path otherwise is demo call or account signup.",
+  "api_type": [
+   "none"
+  ],
+  "api_breadth": "none",
+  "api_notes": "Only Zapier triggers/actions (new sale, failed payment, manual transactions, cancellations, disputes, member joins) found; no documented REST API.",
+  "existing_mcp": "none-found",
+  "mcp_url": null,
+  "buildability": "blocked",
+  "main_blocker": "no public API",
+  "human_needed": "ask FanBasis whether private API credentials/docs exist",
+  "confidence": "low",
+  "evidence": {
+   "auth": "https://emergent.sh/integrations/fanbasis",
+   "access": "https://fanbasis.com",
+   "api": "https://zapier.com/apps/fanbasis/integrations/webhook/255726677/handle-failed-payments-in-fanbasis-by-triggering-gets-in-webhooks-by-zapier",
+   "mcp": null
+  },
+  "notes": "Low confidence: an undocumented or partner-only API may exist (Emergent references API credentials); nothing public was found. Primary_auth 'other' used because no auth is documented.",
+  "round2_change": "Identified the product (high-ticket checkout platform) and found no public API, only Zapier; verdict now blocked."
+ },
+ {
+  "id": 59,
+  "app": "Waterfall.io",
+  "category": "Data, SEO and Scraping",
+  "what_it_does": "B2B contact and company enrichment, search and email verification via waterfall providers.",
+  "auth_methods": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "auth_notes": "API key issued after signup, sent in x-api-key header (401 missing, 403 invalid).",
+  "access": "paid-plan",
+  "access_notes": "Prepaid credit top-up model, billed per successful result; no free trial found; rates vary by endpoint/volume and are quoted after a benchmark. Signup reportedly yields an API key, but whether signup is fully self-serve vs sales-led is not confirmed (waterfall.io/pricing not fetchable).",
+  "api_type": [
+   "REST"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "~23 async launch-then-retrieve endpoints: contact/company/phone enrichment, prospect search, job change, email verify, /v2/account usage; 50 req/min default.",
+  "existing_mcp": "none-found",
+  "mcp_url": null,
+  "buildability": "ready-with-friction",
+  "main_blocker": "paid credits required; no free trial confirmed",
+  "human_needed": "sign up and buy credits (possibly after sales benchmark)",
+  "confidence": "low",
+  "evidence": {
+   "auth": "https://www.leadsforge.ai/blog/waterfall-io-review",
+   "access": "https://www.salesforge.ai/directory/sales-tools/waterfall",
+   "api": "https://www.withone.ai/knowledge/waterfall/md",
+   "mcp": null
+  },
+  "notes": "All evidence third-party (Leadsforge/Salesforge reviews, Cargo and withone connector docs); official site/docs were not reachable. Agent skills on GitHub reported but no MCP server found.",
+  "round2_change": "Access model resolved from unknown to paid-plan (prepaid credits, no trial found), still third-party sourced."
+ },
+ {
+  "id": 68,
+  "app": "MongoDB Atlas",
+  "category": "Developer, Infra and Data platforms",
+  "what_it_does": "Managed cloud MongoDB database service.",
+  "auth_methods": [
+   "OAuth2",
+   "other"
+  ],
+  "primary_auth": "OAuth2",
+  "auth_notes": "Atlas Administration API: service-account OAuth2 client credentials -> Bearer token, or legacy programmatic API keys via HTTP Digest ('other'). Org Owner creates them; optional IP access list. Data access uses DB user + connection string.",
+  "access": "self-serve-free",
+  "access_notes": "Self-serve Atlas signup with free tier cluster; Admin API credentials created by the org owner without sales. Data API/HTTPS endpoints reached end-of-life in September 2025, so document CRUD needs drivers (or the MCP server).",
+  "api_type": [
+   "REST",
+   "SDK/CLI only"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Admin API v2 (cloud.mongodb.com/api/atlas/v2) for projects, clusters, users, access lists, backups, alerts. No REST data plane since Data API EOL; data ops via drivers.",
+  "existing_mcp": "official",
+  "mcp_url": "https://github.com/mongodb-js/mongodb-mcp-server",
+  "buildability": "ready",
+  "main_blocker": "none",
+  "human_needed": "none",
+  "confidence": "medium",
+  "evidence": {
+   "auth": "https://www.mongodb.com/docs/atlas/configure-api-access/",
+   "access": "https://mongodb.com/community/forums/t/mongodb-atlas-data-api-and-custom-https-endpoints-end-of-life-and-deprecation/296686",
+   "api": "https://mongodb.com/docs/atlas/app-services/data-api/data-api-deprecation",
+   "mcp": "https://www.mongodb.com/pt-br/docs/mcp-server/remote-mcp/access-models/"
+  },
+  "notes": "Resolved the round-1 contradiction in favour of 'ready': credentials are fully self-serve and the Admin API is a documented REST API. Data-plane needing a driver is an implementation detail (the official MCP already uses a connection string), not an access blocker, so main_blocker is 'none'.",
+  "round2_change": "Fixed contradiction: kept buildability 'ready' and set main_blocker to 'none'; added Data API EOL (Sept 2025) evidence."
+ },
+ {
+  "id": 84,
+  "app": "Paygent Connect",
+  "category": "Finance and Fintech",
+  "what_it_does": "Payment gateway product, reportedly NMI-powered; vendor not identifiable.",
+  "auth_methods": [
+   "other"
+  ],
+  "primary_auth": "other",
+  "auth_notes": "No docs for a 'Paygent Connect' product exist publicly. If it is an NMI white-label, NMI uses security/API keys created in the gateway (partners can create merchant keys) - inference only.",
+  "access": "no-public-api",
+  "access_notes": "Searches for 'Paygent Connect' return no matching product page. Found only: Paygent (Japan) via IXOPAY adapters needing Paygent-issued merchant ID/certificate, and NMI's generic gateway (docs.nmi.com, sandbox and partner APIs, no Paygent mention).",
+  "api_type": [
+   "none"
+  ],
+  "api_breadth": "none",
+  "api_notes": "No public Paygent Connect API. Underlying NMI gateway has public REST docs and sandbox that could work for a merchant on an NMI reseller gateway (unconfirmed).",
+  "existing_mcp": "none-found",
+  "mcp_url": null,
+  "buildability": "blocked",
+  "main_blocker": "no public API / product not identifiable",
+  "human_needed": "confirm vendor identity and obtain merchant gateway credentials from the reseller",
+  "confidence": "low",
+  "evidence": {
+   "auth": "https://docs.nmi.com/llms.txt",
+   "access": "https://documentation.ixopay.com/adapters/paygent-pci",
+   "api": "https://docs.nmi.com/llms.txt",
+   "mcp": null
+  },
+  "notes": "If the reseller confirms it is an NMI white-label, re-scope as the NMI toolkit (API/security key auth, merchant-gated). 'other' auth used because no Paygent auth is documented.",
+  "round2_change": "Re-searched; still no product found, so access set to no-public-api (was unknown) and verdict stays blocked."
+ },
+ {
+  "id": 85,
+  "app": "iPayX",
+  "category": "Finance and Fintech",
+  "what_it_does": "Forensic FX audit detecting hidden bank markups on cross-border payments.",
+  "auth_methods": [
+   "none",
+   "Bearer token",
+   "API key"
+  ],
+  "primary_auth": "none",
+  "auth_notes": "Free MCP tools (check_fx_rate, audit_transaction 3/month per IP, compare_fx_sources) need no auth; full_forensic_report needs a Bearer token/API key. Another listing says an optional IPAYX_API_KEY (free from ipayx.ai) enables live provider quotes. How to obtain keys not documented.",
+  "access": "self-serve-free",
+  "access_notes": "Core tools are unauthenticated and free; paid per-report tool price not listed. Publisher iPAYX-Technologies (11850091 Canada Inc.). Dashboard at app.ipayx.ai; no first-party API docs verified.",
+  "api_type": [
+   "none"
+  ],
+  "api_breadth": "narrow",
+  "api_notes": "Only MCP surfaces found (hosted streamable-HTTP worker and an npm stdio package) with 3-4 tools; no REST reference.",
+  "existing_mcp": "official",
+  "mcp_url": "https://github.com/iPAYX-Technologies/mcp-fx-audit",
+  "buildability": "ready-with-friction",
+  "main_blocker": "no documented public REST API; only small MCP surface",
+  "human_needed": "obtain API key for paid report tool",
+  "confidence": "low",
+  "evidence": {
+   "auth": "https://glama.ai/mcp/servers/j0a5aea03v",
+   "access": "https://glama.ai/mcp/servers/j0a5aea03v",
+   "api": "https://mcp.so/servers/mcp-fx-audit-ipayx-stellar",
+   "mcp": "https://glama.ai/mcp/servers/j0a5aea03v"
+  },
+  "notes": "Hosted endpoint is https://wild-bird-a412.ybolduc.workers.dev/mcp. Tool names differ between listings (two variants), suggesting evolving/duplicated servers. All evidence from MCP directories; ipayx.ai not fetched.",
+  "round2_change": "Confirmed publisher repo (iPAYX-Technologies/mcp-fx-audit) and second stdio variant; verdict unchanged."
+ },
+ {
+  "id": 87,
+  "app": "Xero",
+  "category": "Finance and Fintech",
+  "what_it_does": "Cloud accounting for small businesses: invoicing, bank reconciliation, payroll.",
+  "auth_methods": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "auth_notes": "OAuth 2.0 auth code/PKCE for multi-tenant apps; Custom Connections use client credentials for a single organisation.",
+  "access": "self-serve-free",
+  "access_notes": "New apps default to the free Starter tier (no payment method, 5 connections, 1,000 calls/day/org). Tiers from 2 Mar 2026: Core A$35/50 conns, Plus A$245/1,000, Advanced A$1,445/10,000, Enterprise POA; >5 connections needs payment and app certification. Developer Terms ban using API data to train AI/ML models.",
+  "api_type": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Accounting (contacts, invoices, payments, bank transactions, journals, reports, items, tax), Payroll, Assets, Projects, Files APIs; egress metered on paid tiers.",
+  "existing_mcp": "official",
+  "mcp_url": "https://www.npmjs.com/package/@xeroapi/xero-mcp-server",
+  "buildability": "ready-with-friction",
+  "main_blocker": "app certification and paid tier beyond 5 connections",
+  "human_needed": "pass Xero app certification and add billing to scale past 5 connections",
+  "confidence": "high",
+  "evidence": {
+   "auth": "https://glama.ai/mcp/servers/@XeroAPI/xero-mcp-server/blob/main/README.md",
+   "access": "https://developer.xero.com/pricing",
+   "api": "https://mcpservers.org/servers/XeroAPI/xero-mcp-server",
+   "mcp": "https://mcpservers.org/servers/XeroAPI/xero-mcp-server"
+  },
+  "notes": "Pricing page also mentions an official Remote MCP server usable with a demo org on Starter. Policy FAQ: https://developer.xero.com/faq/pricing-and-policy-updates.",
+  "round2_change": "Verified 2026 tiered pricing with free Starter tier (access now self-serve-free) and set blocker to certification/paid tier for scale."
+ },
+ {
+  "id": 88,
+  "app": "Brex",
+  "category": "Finance and Fintech",
+  "what_it_does": "Corporate cards, expense management and business banking.",
+  "auth_methods": [
+   "Bearer token",
+   "OAuth2"
+  ],
+  "primary_auth": "Bearer token",
+  "auth_notes": "Account/card admins create scoped user tokens in Settings > Developer after accepting the Developer API agreement (expire after 90 days unused). Partner OAuth2 client ID/secret issued by contacting Brex developer support. MCP uses OAuth (accounts-api.brex.com).",
+  "access": "admin-approval",
+  "access_notes": "Requires a Brex customer account; an account/card admin must accept the developer API agreement and create tokens. No sandbox: production only (api.brex.com). Partner OAuth credentials only via Brex developer support.",
+  "api_type": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Team/users, cards and limits, expenses, transactions, payments, budgets/spend limits, accounting, travel, bills/vendors; MCP exposes ~41 tools.",
+  "existing_mcp": "official",
+  "mcp_url": "https://api.brex.com/mcp",
+  "buildability": "ready-with-friction",
+  "main_blocker": "Brex customer account required; no sandbox; partner OAuth via support",
+  "human_needed": "Brex admin accepts API agreement and issues token, or request partner OAuth credentials",
+  "confidence": "high",
+  "evidence": {
+   "auth": "https://developer.brex.com/guides/authentication.md",
+   "access": "https://developer.brex.com/docs/partner_authentication",
+   "api": "https://developer.brex.com/docs/mcp",
+   "mcp": "https://developer.brex.com/docs/mcp"
+  },
+  "notes": "MCP is beta and must be enabled under Settings > Beta features.",
+  "round2_change": "Verified from official docs: admin tokens + partner OAuth via support, production-only, official MCP at api.brex.com/mcp."
+ },
+ {
+  "id": 89,
+  "app": "Ramp",
+  "category": "Finance and Fintech",
+  "what_it_does": "Corporate cards, spend management, bill pay and accounting automation.",
+  "auth_methods": [
+   "OAuth2"
+  ],
+  "primary_auth": "OAuth2",
+  "auth_notes": "OAuth 2.0: client credentials for own business, authorization code + refresh for third-party apps; apps created in the Ramp Developer Console. Some scopes are partner-only.",
+  "access": "admin-approval",
+  "access_notes": "Requires a Ramp customer account with admin access to create a developer app; business-wide apps need Admin/Business Owner approval. Sandbox (demo.ramp.com) is by request, not self-serve.",
+  "api_type": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Developer API for transactions, cards, users, reimbursements, bills, vendors, accounting sync, etc.; separate sandbox and production environments.",
+  "existing_mcp": "official",
+  "mcp_url": "https://mcp.ramp.com/mcp",
+  "buildability": "ready-with-friction",
+  "main_blocker": "Ramp customer admin account required; sandbox by request",
+  "human_needed": "Ramp admin creates/approves app or request sandbox access",
+  "confidence": "medium",
+  "evidence": {
+   "auth": "https://docs.ramp.com/llms-guides/authorization.txt",
+   "access": "https://docs.ramp.com/llms-guides/getting-started.txt",
+   "api": "https://docs.ramp.com/llms.txt",
+   "mcp": "https://agents.ramp.com/docs/mcp/setup"
+  },
+  "notes": "Breadth of resources inferred from docs index; getting-started page only showed Transactions. Sandbox MCP at https://demo-mcp.ramp.com/mcp; custom MCP clients need redirect URI allowlisting.",
+  "round2_change": "Verified from official docs: OAuth2 grants, admin-gated customer access, sandbox on request, official MCP at mcp.ramp.com."
+ },
+ {
+  "id": 90,
+  "app": "PitchBook",
+  "category": "Finance and Fintech",
+  "what_it_does": "Private capital market data on companies, deals, investors and funds.",
+  "auth_methods": [
+   "API key"
+  ],
+  "primary_auth": "API key",
+  "auth_notes": "PitchBook team provisions the connection via API key or authentication token.",
+  "access": "partner-gated",
+  "access_notes": "API is separate from the platform and needs a standalone contract via the Direct Data team; existing clients request via My PitchBook > Plugins & Apps. No free/trial access.",
+  "api_type": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Relational endpoints across companies, deals/financings, investors, funds, people, incl. VC exit predictor data; full list in Endpoints Overview doc.",
+  "existing_mcp": "official",
+  "mcp_url": "https://shareholders.morningstar.com/investor-resources/investor-qa/qa-details/2026/How-are-PitchBook-Model-Context-Protocol-MCP-Connectors-monetized-today-if-at-all--2026-cy9M2BxfO7/default.aspx",
+  "buildability": "blocked",
+  "main_blocker": "sales contract for API key",
+  "human_needed": "sign PitchBook Direct Data/API contract",
+  "confidence": "medium",
+  "evidence": {
+   "auth": "https://pitchbook.com/help/pitchbook-api",
+   "access": "https://pitchbook.com/help/pitchbook-api",
+   "api": "https://pitchbook.com/help/pitchbook-api",
+   "mcp": "https://shareholders.morningstar.com/investor-resources/investor-qa/qa-details/2026/How-are-PitchBook-Model-Context-Protocol-MCP-Connectors-monetized-today-if-at-all--2026-cy9M2BxfO7/default.aspx"
+  },
+  "notes": "Morningstar (PitchBook parent) investor Q&A confirms premium PitchBook MCP connectors in Claude/ChatGPT for paying subscribers, plus a direct MCP being piloted; no public MCP URL found, so mcp_url is null. api_breadth 'broad' inferred from 'variety of relational endpoints'.",
+  "round2_change": "Verified sales-contract access from PitchBook help page and found official (subscriber-only) MCP connectors."
+ },
+ {
+  "id": 92,
+  "app": "Otter AI",
+  "category": "AI, Research and Media-native",
+  "what_it_does": "AI meeting assistant that records, transcribes and summarizes conversations.",
+  "auth_methods": [
+   "OAuth2",
+   "API key",
+   "Bearer token"
+  ],
+  "primary_auth": "OAuth2",
+  "auth_notes": "Official MCP (mcp.otter.ai/mcp) uses OAuth sign-in. Public REST API uses user-created API keys (Integrations > Developer > Create key, max 2/user) sent as 'Authorization: Bearer <key>'.",
+  "access": "self-serve-free",
+  "access_notes": "Otter's help pages describe self-serve key creation and MCP OAuth without stating plan limits; only 'Enterprise plan users are limited to 10 requests/second' is mentioned, and a third-party guide claims the REST API is Enterprise-only. In Claude/ChatGPT workspaces an admin must add the connector; Cursor users add it themselves.",
+  "api_type": [
+   "REST"
+  ],
+  "api_breadth": "narrow",
+  "api_notes": "Public API: channels, channel members, conversations (create from file URL, list, get with transcript/summary/action items, audio), workspace. MCP: get_user_info, search, fetch.",
+  "existing_mcp": "official",
+  "mcp_url": "https://mcp.otter.ai/mcp",
+  "buildability": "ready-with-friction",
+  "main_blocker": "plan eligibility unconfirmed (REST possibly Enterprise-only); narrow API",
+  "human_needed": "Otter user authorizes OAuth; confirm plan eligibility with Otter support",
+  "confidence": "medium",
+  "evidence": {
+   "auth": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+   "access": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+   "api": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+   "mcp": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server"
+  },
+  "notes": "Access set to self-serve-free as the most defensible reading of official pages (no plan gate stated, the MCP help page defers plan eligibility to support); may be paid-plan/Enterprise in practice.",
+  "round2_change": "Found Otter's own help pages for MCP and Public API; access changed from admin-approval to self-serve-free (plan gate unconfirmed)."
+ },
+ {
+  "id": 98,
+  "app": "Mermaid CLI",
+  "category": "AI, Research and Media-native",
+  "what_it_does": "Open-source CLI rendering Mermaid diagram definitions to SVG, PNG or PDF.",
+  "auth_methods": [
+   "none"
+  ],
+  "primary_auth": "none",
+  "auth_notes": "Local open-source tool (mmdc, npm @mermaid-js/mermaid-cli); no credentials.",
+  "access": "self-serve-free",
+  "access_notes": "Free MIT package; runs locally via Node/Puppeteer or Docker. No hosted service from the CLI project.",
+  "api_type": [
+   "SDK/CLI only"
+  ],
+  "api_breadth": "narrow",
+  "api_notes": "One function: render .mmd/markdown to SVG/PNG/PDF with theme/config options; Node API but no HTTP API.",
+  "existing_mcp": "community",
+  "mcp_url": "https://cdn.jsdelivr.net/gh/peng-shawn/mermaid-mcp-server@main/README.md",
+  "buildability": "ready-with-friction",
+  "main_blocker": "No hosted API: CLI must be wrapped in a sandboxed runtime (Node + headless Chromium)",
+  "human_needed": "none",
+  "confidence": "medium",
+  "evidence": {
+   "auth": "https://github.com/mermaid-js/mermaid-cli",
+   "access": "https://github.com/mermaid-js/mermaid-cli",
+   "api": "https://github.com/mermaid-js/mermaid-cli",
+   "mcp": "https://cdn.jsdelivr.net/gh/peng-shawn/mermaid-mcp-server@main/README.md"
+  },
+  "notes": "Community MCP @peng-shawn/mermaid-mcp-server (Puppeteer, one 'generate' tool); others: hustcc/mcp-mermaid, tci-nebula/mermaid-mcp. Mermaid Chart offers a hosted OAuth MCP (https://mcp.mermaid.ai/mcp) for validate/render, but it is a separate commercial product, not the CLI. Changed to ready-with-friction because the runtime requirement is a real build blocker.",
+  "round2_change": "Fixed ready-vs-blocker contradiction: CLI-only tool, wrappable in a sandbox -> ready-with-friction (same ruling as Sherlock, see human review)."
+ }
+]

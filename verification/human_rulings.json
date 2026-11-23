@@ -1,0 +1,6 @@
+[
+ {"id":58,"app":"Sherlock","field":"buildability","auditor_said":"blocked","ruling":"rejected","kept":"ready-with-friction",
+  "why":"Spec says 'blocked = no public API', but Sherlock and Mermaid CLI are open-source CLIs that a sandboxed toolkit can run directly. They need a wrapper, not permission, so friction rather than blocked. Applied the same ruling to Mermaid CLI for consistency."},
+ {"id":82,"app":"Plaid","field":"buildability","auditor_said":"ready","ruling":"accepted","kept":"ready",
+  "why":"Free Sandbox plus an auto-approved free Trial with live data means a developer can build and test today. Production approval is a launch concern, not a build blocker."}
+]

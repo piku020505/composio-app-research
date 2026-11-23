@@ -1,0 +1,215 @@
+{
+ "generated": "2026-11-23 11:44 UTC",
+ "n": 100,
+ "access": {
+  "self-serve-free": 58,
+  "self-serve-trial": 18,
+  "paid-plan": 14,
+  "admin-approval": 5,
+  "partner-gated": 3,
+  "no-public-api": 2
+ },
+ "build": {
+  "ready": 60,
+  "blocked": 6,
+  "ready-with-friction": 34
+ },
+ "auth": {
+  "OAuth2": 48,
+  "API key": 27,
+  "Bearer token": 12,
+  "Basic": 5,
+  "Bot token": 2,
+  "other": 2,
+  "none": 3,
+  "Signature/HMAC": 1
+ },
+ "mcp": {
+  "official": 80,
+  "community": 16,
+  "none-found": 4
+ },
+ "oauth_any": 75,
+ "key_any": 80,
+ "blockers": {
+  "Partner / sales / customer-only gate": 9,
+  "App review / approval": 10,
+  "Paid plan required": 13,
+  "No hosted API (CLI / self-host)": 3,
+  "No public API": 2,
+  "Trial expires": 1,
+  "Identity / KYC": 1,
+  "Other": 1
+ },
+ "matrix": {
+  "CRM and Sales": {
+   "self-serve-free": 7,
+   "self-serve-trial": 2,
+   "paid-plan": 1
+  },
+  "Support and Helpdesk": {
+   "self-serve-trial": 6,
+   "self-serve-free": 2,
+   "paid-plan": 2
+  },
+  "Communications and Messaging": {
+   "self-serve-free": 7,
+   "self-serve-trial": 2,
+   "paid-plan": 1
+  },
+  "Marketing, Ads, Email and Social": {
+   "self-serve-free": 5,
+   "admin-approval": 3,
+   "paid-plan": 1,
+   "self-serve-trial": 1
+  },
+  "Ecommerce": {
+   "self-serve-free": 4,
+   "self-serve-trial": 1,
+   "partner-gated": 2,
+   "paid-plan": 2,
+   "no-public-api": 1
+  },
+  "Data, SEO and Scraping": {
+   "self-serve-trial": 2,
+   "paid-plan": 2,
+   "self-serve-free": 6
+  },
+  "Developer, Infra and Data platforms": {
+   "self-serve-free": 8,
+   "self-serve-trial": 2
+  },
+  "Productivity and Project Management": {
+   "self-serve-free": 7,
+   "self-serve-trial": 2,
+   "paid-plan": 1
+  },
+  "Finance and Fintech": {
+   "self-serve-free": 6,
+   "no-public-api": 1,
+   "admin-approval": 2,
+   "partner-gated": 1
+  },
+  "AI, Research and Media-native": {
+   "paid-plan": 4,
+   "self-serve-free": 6
+  }
+ },
+ "bmatrix": {
+  "CRM and Sales": {
+   "ready": 9,
+   "blocked": 1
+  },
+  "Support and Helpdesk": {
+   "ready-with-friction": 2,
+   "ready": 7,
+   "blocked": 1
+  },
+  "Communications and Messaging": {
+   "ready-with-friction": 4,
+   "ready": 6
+  },
+  "Marketing, Ads, Email and Social": {
+   "ready-with-friction": 6,
+   "ready": 4
+  },
+  "Ecommerce": {
+   "ready": 4,
+   "blocked": 2,
+   "ready-with-friction": 4
+  },
+  "Data, SEO and Scraping": {
+   "ready": 7,
+   "ready-with-friction": 3
+  },
+  "Developer, Infra and Data platforms": {
+   "ready": 8,
+   "ready-with-friction": 2
+  },
+  "Productivity and Project Management": {
+   "ready": 9,
+   "ready-with-friction": 1
+  },
+  "Finance and Fintech": {
+   "ready": 2,
+   "ready-with-friction": 6,
+   "blocked": 2
+  },
+  "AI, Research and Media-native": {
+   "ready-with-friction": 6,
+   "ready": 4
+  }
+ },
+ "loop1_flagged": 29,
+ "unresolved_p1": 24,
+ "unresolved_final": 0,
+ "verdicts": {
+  "correct": 96,
+  "wrong": 2,
+  "unverifiable": 2
+ },
+ "per_field": {
+  "primary_auth": {
+   "correct": 20
+  },
+  "access": {
+   "correct": 19,
+   "unverifiable": 1
+  },
+  "api_type": {
+   "correct": 20
+  },
+  "existing_mcp": {
+   "correct": 20
+  },
+  "buildability": {
+   "correct": 17,
+   "wrong": 2,
+   "unverifiable": 1
+  }
+ },
+ "p1_sample_acc": 98.0,
+ "p1_est": 74.5,
+ "corrections": [
+  {
+   "id": 82,
+   "app": "Plaid",
+   "field": "buildability",
+   "was": "ready-with-friction",
+   "now": "ready",
+   "url": "https://support.plaid.com/hc/en-us/articles/16110110883479-How-are-Sandbox-Production-Trial-plan-and-Limited-Production-different"
+  }
+ ],
+ "rulings": [
+  {
+   "id": 58,
+   "app": "Sherlock",
+   "field": "buildability",
+   "auditor_said": "blocked",
+   "ruling": "rejected",
+   "kept": "ready-with-friction",
+   "why": "Spec says 'blocked = no public API', but Sherlock and Mermaid CLI are open-source CLIs that a sandboxed toolkit can run directly. They need a wrapper, not permission, so friction rather than blocked. Applied the same ruling to Mermaid CLI for consistency."
+  },
+  {
+   "id": 82,
+   "app": "Plaid",
+   "field": "buildability",
+   "auditor_said": "ready",
+   "ruling": "accepted",
+   "kept": "ready",
+   "why": "Free Sandbox plus an auto-approved free Trial with live data means a developer can build and test today. Production approval is a launch concern, not a build blocker."
+  }
+ ],
+ "conf": {
+  "high": 35,
+  "medium": 61,
+  "low": 4
+ },
+ "conf1": {
+  "high": 28,
+  "medium": 46,
+  "low": 26
+ },
+ "human": [],
+ "final_sample_acc": 100.0
+}
